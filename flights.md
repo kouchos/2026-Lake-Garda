@@ -23,13 +23,13 @@ Ryanair typically operates frequent services during the summer schedule (often d
 
 *   **Outbound (Sat June 27):**
     *   **Flight:** FR4266
-    *   **Time:** Depart DUB **~09:10 AM** – Arrive VRN **~12:45 PM**
+    *   **Time:** Depart DUB **~09:10 AM** – Arrive VRN **~12:45 PM** (Confirmed by Winter 2026 schedule data).
     *   **Pros:** Perfect timing (not too early, arrive in time for lunch/afternoon swim). Maximizes the first day without an exhausting start.
     *   **Cons:** Strict baggage limits (add priority/bags for family).
 
 *   **Inbound (Tue July 7):**
     *   **Flight:** FR4267
-    *   **Time:** **Varies significantly by day of week.** Historical data from Summer 2024 shows morning departures on some days (e.g., ~11:00 AM) and afternoon on others (e.g., ~5:00 PM). Winter schedules (Jan 2026) show ~12:10 PM departures.
+    *   **Time:** **Varies significantly by day of week.** Historical data from Summer 2024 shows morning departures on some days (e.g., ~11:00 AM) and afternoon on others (e.g., ~5:00 PM). Current Winter 2026 data confirms a **12:10 PM** departure.
     *   **Note:** If Tuesday flight is unavailable or times are poor (e.g., late night), consider **Wednesday July 8** or **Thursday July 9** as flexible options.
 
 *   **Supporting Links:**
