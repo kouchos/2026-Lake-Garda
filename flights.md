@@ -15,18 +15,26 @@ This document outlines the best flight and transfer options for a family trip to
 
 The primary carriers for this route are **Ryanair** and **Aer Lingus**.
 
+### Schedule Status
+**Note:** Ryanair has not yet released its Summer 2026 flight schedule. Based on historical trends, the schedule is expected to be released around **mid-September 2025** (approx. 9 months in advance).
+
 ### Option A: Ryanair (Best for Maximizing Time)
 Ryanair typically operates frequent services during the summer schedule (often daily or near-daily), offering good flexibility for the Tuesday return.
 
 *   **Outbound (Sat June 27):**
     *   **Flight:** FR4266
-    *   **Time:** Depart DUB **~09:10 AM** – Arrive VRN **~12:45 PM**
+    *   **Time:** Depart DUB **~09:10 AM** – Arrive VRN **~12:45 PM** (Confirmed by Winter 2026 schedule data).
     *   **Pros:** Perfect timing (not too early, arrive in time for lunch/afternoon swim). Maximizes the first day without an exhausting start.
     *   **Cons:** Strict baggage limits (add priority/bags for family).
 
 *   **Inbound (Tue July 7):**
-    *   **Flight:** Likely afternoon/evening service (Summer schedules vary, check specific release).
+    *   **Flight:** FR4267
+    *   **Time:** **Varies significantly by day of week.** Historical data from Summer 2024 shows morning departures on some days (e.g., ~11:00 AM) and afternoon on others (e.g., ~5:00 PM). Current Winter 2026 data confirms a **12:10 PM** departure.
     *   **Note:** If Tuesday flight is unavailable or times are poor (e.g., late night), consider **Wednesday July 8** or **Thursday July 9** as flexible options.
+
+*   **Supporting Links:**
+    *   [FlightAware History - FR4266 (DUB-VRN)](https://www.flightaware.com/live/flight/RYR4266)
+    *   [FlightAware History - FR4267 (VRN-DUB)](https://www.flightaware.com/live/flight/RYR4267)
 
 ### Option B: Aer Lingus (More Comfort, Fixed Schedule)
 Aer Lingus operates a scheduled service, typically on Saturdays.
