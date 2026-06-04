@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lake Garda Itinerary - Resort</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <script src="theme.js" defer></script>
 </head>
 <body>
     <header style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Swimming_pool_at_camping_Bella_Italia_in_Peschiera_del_Garda.jpg/1280px-Swimming_pool_at_camping_Bella_Italia_in_Peschiera_del_Garda.jpg');">
@@ -19,6 +31,7 @@
             <a href="food.html">Food & Drink</a>
             <a href="etiquette.html">Etiquette</a>
             <a href="budget.html">Budget</a>
+            <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
         </nav>
     </header>
     <main>
