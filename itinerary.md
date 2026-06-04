@@ -9,11 +9,11 @@
 ## 📅 Important Dates & Deadlines
 *Mark these in your calendar for a smooth booking experience.*
 
-> **⏰ Status (June 2026):** Departure is just weeks away — the Feb–May windows below have passed. If flights, the accommodation balance, transfers, or Gardaland passes are **not yet booked**, do them **now**. Summer 2026 flight schedules are released and on sale.
+> **⏰ Status (June 2026):** Departure is just weeks away. ✈️ **Flights are now BOOKED** (Aer Lingus both ways — see below). If the accommodation balance, transfers, or Gardaland passes are **not yet booked**, do them **now**.
 
 | Date | Milestone | Action |
 | :--- | :--- | :--- |
-| **ASAP (overdue)** | **Flights** | Book DUB→VRN now. Aer Lingus now flies multiple days/week (~Tue/Thu/Fri/Sat) — Tuesday 7 July return bookable on Aer Lingus; Ryanair Saturday outbound is ~1x weekly. |
+| **✅ Flights** | **BOOKED** | Aer Lingus both ways: out Sat 27 June (DUB 16:10), back Tue 7 July (VRN 19:15). Total ~€2,800. |
 | **Mar 2026** | **Accom Balance** | Final payment for Del Garda Village usually due (Check Eurocamp/Provider). |
 | **Apr 2026**| **Transfers** | Book [Ziptransfers](https://www.ziptransfers.com) return (~€150). |
 | **May 2026**| **Gardaland** | Buy Gold Season Passes online to get the early-bird pricing. |
@@ -46,15 +46,12 @@
 
 ## 2. Logistics (To Be Booked)
 
-### Flights (Target: Verona or Milan)
-*   **Outbound:** Saturday 27th June 2026.
-*   **Return:** Tuesday 7th July 2026.
-*   **Target Airports:**
-    *   **Verona (VRN):** 25 mins drive. (Aer Lingus / Ryanair).
-    *   **Milan Bergamo (BGY):** 1hr 15 mins drive. (Ryanair - often cheaper).
-    *   **Milan Linate (LIN):** 1hr 30 mins drive. (Aer Lingus).
-
-**Flights update (June 2026):** Summer 2026 schedules are released and on sale. **Aer Lingus now flies DUB–VRN on multiple days a week (~Tue/Thu/Fri/Sat)**, so a Tuesday 7 July return is now bookable on Aer Lingus — the old "fly out Aer Lingus, back Ryanair" workaround is no longer required. Ryanair currently runs only ~1 weekly rotation (the Saturday). See `flights.md` for detail. **Book now — the trip is weeks away.**
+### Flights (✅ BOOKED — Aer Lingus, both ways to/from Verona)
+*   **Outbound:** Saturday 27 June 2026 — **depart Dublin (DUB) 16:10**, arrive Verona (VRN) ~19:45.
+*   **Return:** Tuesday 7 July 2026 — **depart Verona (VRN) 19:15**, arrive Dublin (DUB) ~20:50.
+*   **Total fare (2A + 3C):** **~€2,800**.
+*   **Arrival-night plan:** the 16:10 outbound lands mid-evening, so the 27th is a transfer + check-in + sleep night; first full day is the 28th.
+*   Verona (VRN) airport is ~25 mins drive from Del Garda Village. See `flights.md` for the full record and the transfer options below.
 
 **Note:** Del Garda Village is ~1.5km from Peschiera station.
 
@@ -463,10 +460,11 @@ Your plan to use "Junior Passes" will likely **NOT work**.
 | Category | Item | Est. / Paid | Outstanding |
 | :--- | :--- | :--- | :--- |
 | **Accom** | Del Garda Village (10n) | €542.63 (Paid) | **€1,627.87** |
-| **Flights** | Dublin <-> Verona/Milan (Est) | - | ~€1,800.00 |
+| **Flights** | Dublin <-> Verona (Aer Lingus, **BOOKED**) | ~€2,800.00 | **PAID** |
 | **Transport**| Private Transfers (Return) | - | ~€150.00 |
 | **Activities**| **5x Gardaland Gold Passes** (2026: ~€79 ea) | - | **~€395.00** |
 | **Fees** | Taxes / Deposits | - | ~€122.00 |
-| **Total** | | | **~€4,100.00** |
+| **Outstanding to pay** | | | **~€2,300.00** |
 
-*Activities figure updated June 2026: 2026 Gold pass is ~€79 (was assumed €99), so 5 passes ≈ €395.*
+*Updated June 2026: Flights **booked & paid** (~€2,800, Aer Lingus both ways). 2026 Gardaland Gold pass is ~€79, so 5 passes ≈ €395.*
+*Already paid: accom deposit €542.63 + flights ~€2,800. **Total trip cost (paid + outstanding) ≈ €5,600** (excludes spending money, food, fuel/incidentals).*

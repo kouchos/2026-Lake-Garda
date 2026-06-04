@@ -1,8 +1,23 @@
-# Flight Research: Dublin to Verona (June 2026)
+# Flights: Dublin to Verona (June 2026)
 
-*Last verified: June 2026. The Summer 2026 schedules are now fully released — book promptly, the trip is imminent.*
+## ✅ BOOKED — Aer Lingus (both ways)
+*Confirmed June 2026. These flights are booked; the research below is kept for reference only.*
 
-This document outlines the best flight and transfer options for a family trip to Lake Garda (staying at Del Garda Village and Camping, Peschiera del Garda) for the dates **June 27, 2026 – July 7, 2026**.
+| Leg | Date | Airline | Departs | Arrives (approx) |
+| :--- | :--- | :--- | :--- | :--- |
+| **Outbound** | Sat 27 June 2026 | Aer Lingus | **DUB 16:10** | VRN ~19:45 |
+| **Return** | Tue 7 July 2026 | Aer Lingus | **VRN 19:15** | DUB ~20:50 |
+
+*   **Total fare (2 adults + 3 children):** **~€2,800**.
+*   Arrival times are estimated from the ~2h35 flight time + 1h time difference — confirm against the e-ticket.
+*   Both legs on Aer Lingus (single booking, one baggage policy). The Tuesday return is a single-carrier Aer Lingus flight — no carrier mix needed.
+*   **Note on timing:** the 16:10 outbound arrives Verona mid-evening, so plan a light arrival night (transfer + check-in + sleep); the first full day is the 28th.
+
+---
+
+## Research & Options (Reference — superseded by the booking above)
+
+This section outlines the flight and transfer research for the trip to Lake Garda (staying at Del Garda Village and Camping, Peschiera del Garda) for the dates **June 27, 2026 – July 7, 2026**.
 
 **Constraints:**
 *   **Passengers:** 2 Adults, 3 Children.
@@ -54,7 +69,7 @@ Ryanair offers the well-timed Saturday morning outbound, but with only ~1 weekly
     *   **Fallback:** If the Tuesday time is poor, Wednesday 8 July or a Ryanair return remain options.
 
 ### Recommendation
-**Simplest plan:** Book **Aer Lingus both ways** (out Sat 27 June, back Tue 7 July) now that it operates multiple days — this keeps one booking, one baggage policy, and the comfort. If Ryanair's Saturday morning outbound is significantly cheaper, a **Ryanair out / Aer Lingus Tuesday back** mix also works. Either way, lock in the family seats and bags early — both carriers are selling these dates already.
+**Simplest plan:** Book **Aer Lingus both ways** (out Sat 27 June, back Tue 7 July) now that it operates multiple days — this keeps one booking, one baggage policy, and the comfort. ✅ **This is what was booked** (see the confirmed times at the top). The earlier morning/early-afternoon time estimates did not survive into the final booking — the actual times are DUB 16:10 out and VRN 19:15 back.
 
 ---
 
