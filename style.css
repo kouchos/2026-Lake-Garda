@@ -1,127 +1,262 @@
+/* ==========================================================================
+   Lake Garda 2026 — shared stylesheet
+   Modern, clean, mobile-first. Light + dark themes via CSS custom properties.
+   Theme is selected with the [data-theme="dark"] attribute on <html>
+   (set by theme.js / the inline no-flash script in each page's <head>).
+   ========================================================================== */
+
+/* ---- Design tokens : light (default) ---------------------------------- */
 :root {
-    --primary-color: #0077be;
-    --secondary-color: #fdb813;
-    --background-color: #fdfcf0;
-    --text-color: #333;
-    --light-text: #fff;
-    --header-height: 250px;
+    /* Brand */
+    --primary-color: #0077be;        /* lake blue */
+    --primary-strong: #005f99;
+    --secondary-color: #f5a623;      /* warm sun */
+
+    /* Surfaces & text */
+    --background-color: #eef2f6;
+    --surface: #ffffff;
+    --surface-2: #f6f8fb;
+    --text-color: #1f2933;
+    --muted-text: #56616c;
+    --light-text: #ffffff;
+    --border-color: #e2e8f0;
+
+    /* Effects */
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+    --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --overlay: rgba(8, 23, 38, 0.45);
+
+    /* Shape & rhythm */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --header-height: 300px;
+    --content-width: 920px;
+}
+
+/* ---- Design tokens : dark --------------------------------------------- */
+[data-theme="dark"] {
+    --primary-color: #4cb3ec;
+    --primary-strong: #7ccbf2;
+    --secondary-color: #ffc24d;
+
+    --background-color: #0e1620;
+    --surface: #161f2b;
+    --surface-2: #1d2836;
+    --text-color: #e6ecf3;
+    --muted-text: #9fb0c0;
+    --light-text: #f4f8fc;
+    --border-color: #2a3747;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 20px 44px rgba(0, 0, 0, 0.55);
+    --overlay: rgba(3, 9, 16, 0.62);
+}
+
+/* ---- Base ------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Helvetica, Arial, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* ---- Header ----------------------------------------------------------- */
 header {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-    height: var(--header-height);
+    background-color: var(--primary-strong);
+    color: #fff;
+    min-height: var(--header-height);
     background-size: cover;
     background-position: center;
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
 }
 
 header::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.4); /* Overlay for text readability */
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(8, 23, 38, 0.15) 0%,
+        var(--overlay) 55%,
+        rgba(8, 23, 38, 0.72) 100%
+    );
 }
 
 header h1 {
     position: relative;
-    margin: 0;
-    padding: 20px;
-    font-size: 2.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: auto 0 0;
+    padding: 28px 24px 22px;
+    max-width: var(--content-width);
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
+/* ---- Navigation ------------------------------------------------------- */
 nav {
-    background-color: rgba(0, 119, 190, 0.95);
-    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 6px;
+    padding: 10px 16px;
+    background-color: color-mix(in srgb, var(--surface) 82%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 }
 
 nav a {
-    color: var(--light-text);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover, nav a.active {
-    background-color: var(--secondary-color);
     color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 14px;
+    border-radius: 999px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
 }
 
+nav a:hover {
+    background-color: var(--surface-2);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav a.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 auto;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color: var(--surface-2);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    transition: background-color 0.2s ease, transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 16%, var(--surface-2));
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+.theme-toggle:active {
+    transform: translateY(0);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* ---- Main / cards ----------------------------------------------------- */
 main {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    max-width: var(--content-width);
+    margin: -48px auto 48px;
+    position: relative;
+    z-index: 1;
+    padding: 32px 36px;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+main > p:first-of-type {
+    margin-top: 0;
+}
+
+/* ---- Typography ------------------------------------------------------- */
 h2 {
     color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
+    font-weight: 700;
+    letter-spacing: -0.01em;
     padding-bottom: 10px;
-    margin-top: 30px;
+    margin-top: 42px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+h2::after {
+    /* short accent underline overlapping the full border */
+    content: '';
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin-bottom: -12px;
+    background: var(--secondary-color);
 }
 
 h3 {
-    color: #005f99;
-    margin-top: 25px;
+    color: var(--primary-strong);
+    font-weight: 700;
+    margin-top: 28px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    overflow-x: auto;
-    display: block;
+h4 {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-top: 22px;
+    margin-bottom: 8px;
 }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+p,
+li {
+    color: var(--text-color);
 }
 
-th {
-    background-color: var(--primary-color);
-    color: var(--light-text);
-}
-
-tr:hover {
-    background-color: #f1f1f1;
+code {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+    background: var(--surface-2);
+    border: 1px solid var(--border-color);
+    padding: 2px 6px;
+    border-radius: 6px;
 }
 
 a {
@@ -133,48 +268,127 @@ a:hover {
     text-decoration: underline;
 }
 
+/* ---- Tables ----------------------------------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    background: var(--surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+th,
+td {
+    padding: 13px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: top;
+}
+
+thead th {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--surface-2);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 9%, var(--surface));
+}
+
+/* ---- Map links / pills ------------------------------------------------ */
 .map-link {
-    display: inline-block;
-    background-color: #eef;
-    padding: 2px 6px;
-    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: color-mix(in srgb, var(--primary-color) 12%, var(--surface));
+    color: var(--primary-color);
+    border: 1px solid color-mix(in srgb, var(--primary-color) 30%, transparent);
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 0.85em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.map-link::before {
+    content: '📍';
     font-size: 0.9em;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    background-color: var(--primary-color);
-    color: var(--light-text);
+.map-link:hover {
+    background-color: color-mix(in srgb, var(--primary-color) 20%, var(--surface));
+    text-decoration: none;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.8rem;
+/* ---- Footer ----------------------------------------------------------- */
+footer {
+    text-align: center;
+    padding: 28px 20px;
+    margin-top: 48px;
+    color: var(--muted-text);
+    background-color: var(--surface);
+    border-top: 1px solid var(--border-color);
+}
+
+footer p {
+    margin: 0;
+    color: var(--muted-text);
+}
+
+/* ---- Mobile ----------------------------------------------------------- */
+@media (max-width: 640px) {
+    :root {
+        --header-height: 220px;
     }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    nav {
+        gap: 4px;
+        padding: 8px 10px;
+        justify-content: flex-start;
     }
 
     nav a {
-        display: block;
-        width: 100%;
-        text-align: center;
+        font-size: 0.85rem;
+        padding: 7px 11px;
     }
 
     main {
-        padding: 15px;
-        margin: 10px;
+        margin: -28px 12px 28px;
+        padding: 22px 18px;
+        border-radius: var(--radius-md);
     }
 
+    header h1 {
+        padding: 22px 18px 18px;
+    }
+
+    /* Let wide tables scroll horizontally without breaking the layout */
     table {
         display: block;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         white-space: nowrap;
+    }
+}
+
+/* ---- Reduced motion --------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }
