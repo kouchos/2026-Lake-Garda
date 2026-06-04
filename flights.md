@@ -1,5 +1,7 @@
 # Flight Research: Dublin to Verona (June 2026)
 
+*Last verified: June 2026. The Summer 2026 schedules are now fully released — book promptly, the trip is imminent.*
+
 This document outlines the best flight and transfer options for a family trip to Lake Garda (staying at Del Garda Village and Camping, Peschiera del Garda) for the dates **June 27, 2026 – July 7, 2026**.
 
 **Constraints:**
@@ -16,10 +18,12 @@ This document outlines the best flight and transfer options for a family trip to
 The primary carriers for this route are **Ryanair** and **Aer Lingus**.
 
 ### Schedule Status
-**Note:** Ryanair has not yet released its Summer 2026 flight schedule. Based on historical trends, the schedule is expected to be released around **mid-September 2025** (approx. 9 months in advance).
+**Update (June 2026):** Both airlines have released and are selling the Summer 2026 schedule. Confirm exact times for your specific dates directly on the airline site at the point of booking, as peak-summer day-of-week patterns shift.
+*   **Ryanair (DUB–VRN):** Operating, but currently only **~1 rotation per week** on this route for Summer 2026 (typically the Saturday) — far less frequent than past summers. Good for the Saturday outbound, weaker for a flexible Tuesday return.
+*   **Aer Lingus (DUB–VRN):** Now the more frequent option — operating on **multiple days a week (around Tue / Thu / Fri / Sat)** with departures spread across roughly 07:00–15:00. This is a change from prior years when it was effectively Saturday-only.
 
-### Option A: Ryanair (Best for Maximizing Time)
-Ryanair typically operates frequent services during the summer schedule (often daily or near-daily), offering good flexibility for the Tuesday return.
+### Option A: Ryanair (Best for the Saturday Outbound)
+Ryanair offers the well-timed Saturday morning outbound, but with only ~1 weekly rotation it is no longer the flexible "any day" option it once was.
 
 *   **Outbound (Sat June 27):**
     *   **Flight:** FR4266
@@ -36,21 +40,21 @@ Ryanair typically operates frequent services during the summer schedule (often d
     *   [FlightAware History - FR4266 (DUB-VRN)](https://www.flightaware.com/live/flight/RYR4266)
     *   [FlightAware History - FR4267 (VRN-DUB)](https://www.flightaware.com/live/flight/RYR4267)
 
-### Option B: Aer Lingus (More Comfort, Fixed Schedule)
-Aer Lingus operates a scheduled service, typically on Saturdays.
+### Option B: Aer Lingus (More Comfort — Now Multi-Day)
+**Updated June 2026:** Aer Lingus has expanded this route and now flies on **multiple days a week (around Tue / Thu / Fri / Sat)** for Summer 2026, with departures roughly 07:00–15:00. The old "Saturdays only" constraint no longer applies.
 
 *   **Outbound (Sat June 27):**
-    *   **Flight:** EI412
-    *   **Time:** Depart DUB **~12:30 PM** – Arrive VRN **~04:05 PM**
-    *   **Pros:** Very comfortable departure time. Arrive in time for dinner/evening settlement. 4-star airline service.
-    *   **Cons:** Arrives later in the day than Ryanair.
+    *   **Flight:** EI412 (typical Saturday service).
+    *   **Time:** Depart DUB **~12:30 PM** – Arrive VRN **~04:05 PM** *(confirm exact time at booking).*
+    *   **Pros:** Comfortable departure time, arrive in time for dinner/evening settlement, 4-star airline service.
+    *   **Cons:** Arrives later in the day than the Ryanair morning service.
 
 *   **Inbound (Tue July 7):**
-    *   **Challenge:** Aer Lingus often operates this route only on Saturdays (1x weekly).
-    *   **Solution:** You may need to book a **one-way out with Aer Lingus** and return with **Ryanair** on the Tuesday/Wednesday, or extend the trip to Saturday July 11 (14 nights) to fly Aer Lingus return.
+    *   **Good news:** Tuesday is now within Aer Lingus's operating days for the summer, so a **Tuesday Aer Lingus return is likely bookable** — no longer forcing a carrier mix. Verify the exact Tue 7 July time when booking.
+    *   **Fallback:** If the Tuesday time is poor, Wednesday 8 July or a Ryanair return remain options.
 
 ### Recommendation
-**Mix & Match:** Fly **Ryanair outbound** (09:10 AM) to get the most out of the first day, and book **Ryanair return** on Tuesday/Wednesday. If you prefer Aer Lingus comfort, fly EI412 out, but be prepared to use Ryanair for the return leg on a Tuesday.
+**Simplest plan:** Book **Aer Lingus both ways** (out Sat 27 June, back Tue 7 July) now that it operates multiple days — this keeps one booking, one baggage policy, and the comfort. If Ryanair's Saturday morning outbound is significantly cheaper, a **Ryanair out / Aer Lingus Tuesday back** mix also works. Either way, lock in the family seats and bags early — both carriers are selling these dates already.
 
 ---
 

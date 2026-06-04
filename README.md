@@ -4,9 +4,9 @@
 This repository is dedicated to planning our family trip to Lake Garda, Italy. We will use this space to organize our itinerary, manage bookings, and keep track of expenses.
 
 ## 📅 Trip Details
-- **Destination:** Lake Garda, Italy
-- **Dates:** Saturday, June 27, 2026 – Sunday, July 5, 2026
-- **Duration:** 9 Days, 8 Nights
+- **Destination:** Lake Garda, Italy (Del Garda Village & Camping, Peschiera del Garda)
+- **Dates:** Saturday, June 27, 2026 – Tuesday, July 7, 2026
+- **Duration:** 11 Days, 10 Nights
 
 ## 📂 Repository Structure
 We can organize the planning documents into the following folders/files:

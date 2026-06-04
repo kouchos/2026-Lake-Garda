@@ -7,11 +7,13 @@
 ---
 
 ## 📅 Important Dates & Deadlines
-*Mark these in your calendar for a smooth booking experience:*
+*Mark these in your calendar for a smooth booking experience.*
+
+> **⏰ Status (June 2026):** Departure is just weeks away — the Feb–May windows below have passed. If flights, the accommodation balance, transfers, or Gardaland passes are **not yet booked**, do them **now**. Summer 2026 flight schedules are released and on sale.
 
 | Date | Milestone | Action |
 | :--- | :--- | :--- |
-| **Now / Feb 2026** | **Flights** | Book Aer Lingus DUB->VRN as soon as prices stabilize. |
+| **ASAP (overdue)** | **Flights** | Book DUB→VRN now. Aer Lingus now flies multiple days/week (~Tue/Thu/Fri/Sat) — Tuesday 7 July return bookable on Aer Lingus; Ryanair Saturday outbound is ~1x weekly. |
 | **Mar 2026** | **Accom Balance** | Final payment for Del Garda Village usually due (Check Eurocamp/Provider). |
 | **Apr 2026**| **Transfers** | Book [Ziptransfers](https://www.ziptransfers.com) return (~€150). |
 | **May 2026**| **Gardaland** | Buy Gold Season Passes online to get the early-bird pricing. |
@@ -51,6 +53,8 @@
     *   **Verona (VRN):** 25 mins drive. (Aer Lingus / Ryanair).
     *   **Milan Bergamo (BGY):** 1hr 15 mins drive. (Ryanair - often cheaper).
     *   **Milan Linate (LIN):** 1hr 30 mins drive. (Aer Lingus).
+
+**Flights update (June 2026):** Summer 2026 schedules are released and on sale. **Aer Lingus now flies DUB–VRN on multiple days a week (~Tue/Thu/Fri/Sat)**, so a Tuesday 7 July return is now bookable on Aer Lingus — the old "fly out Aer Lingus, back Ryanair" workaround is no longer required. Ryanair currently runs only ~1 weekly rotation (the Saturday). See `flights.md` for detail. **Book now — the trip is weeks away.**
 
 **Note:** Del Garda Village is ~1.5km from Peschiera station.
 
@@ -139,33 +143,33 @@ You have timed this very well.
 
 ---
 
-### Theme Park Pricing (2025/26 Estimates)
-*Prices based on 2025 online rates. Always book online >7 days in advance for these rates.*
+### Theme Park Pricing (Verified June 2026)
+*Official 2026 rates (gardaland.it). Always book online in advance — gate prices are higher.*
 
 **1. Gardaland (The Big One)**
-*   **Daily Ticket:** ~€44 - €49 per person (Adult/Child >100cm).
-### Season Pass Strategy: Silver vs. Gold (Is it worth it?)
+*   **Daily Ticket (2026):** **€56** full price (age 10+), **€50** reduced (100cm up to age 10). *(Up from ~€44–49 in 2025 — prices rose for 2026.)* Free under 100cm. Often cheaper via dated online/early-bird offers.
+
+### Season Pass Strategy (Restructured for 2026)
 **Critical Update:**
 Your plan to use "Junior Passes" will likely **NOT work**.
 *   **Junior Pass Rule:** Strictly for children **under 6 years old** (or <1m height).
-*   **Your Kids (7, 7, 9):** Will likely need full price Adult/Standard passes (Silver or Gold).
+*   **Your Kids (7, 7, 9):** Will need standard passes (Silver / Gold / Platinum).
 
-| Feature | **Silver Pass** (~€79) | **Gold Pass** (~€99) |
-| :--- | :--- | :--- |
-| **Park Entry** | Unlimited (Blackout dates exist) | **Unlimited (No blackouts)** |
-| **Parking** | **Included** (Saves €7-10/day) | **Included** |
-| **Sea Life** | Not Included | **Unlimited Entry** |
-| **Legoland Water Park**| Not Included | **3 Free Entries** |
-| **Fast Track** | None | **1 Time Saver Ride** per visit |
-| **Food/Shop Discount**| None | **10% Off** (Selected locations) |
+**Gardaland renamed and re-tiered its passes for 2026** — there are now three tiers. Indicative new-buyer prices (confirm exact figures on gardaland.it, as offers change):
+
+| Feature | **Silver** (from ~€59) | **Gold** (~€79) | **Platinum** (~€149) |
+| :--- | :--- | :--- | :--- |
+| **Park Entry** | Unlimited (some blackout dates) | **Unlimited, no blackouts** | **Unlimited, no blackouts** |
+| **Parking** | Included | **Included** | **Included** |
+| **SEA LIFE Aquarium** | Not included | **Included** | **Included** |
+| **Merlin parks (NEW 2026)** | — | Free entry to 20+ Merlin attractions across Europe (incl. LEGOLAND parks) | As Gold, plus extra perks |
+| **Fast Track / Extras** | None | Limited | Best (priority, more perks) |
 
 **Confirmed Strategy:**
-*   **5x Gold Passes:** ~€500 total.
-    *   **Includes:** Unlimited Entry, Free Parking, Unlimited Sea Life, 3x Legoland Waterpark, 1x Time Saver per visit.
-    *   *Note:* Using kids' Time Saver credits allowed for adults if confirmed at park.
-
-*   **Option B (Mixed) - DISCARDED:**
-    *   Not worth the hassle. Silver passes lack Waterpark access and adding it costs more than the upgrade to Gold.
+*   **5x Gold Passes:** **~€395 total** (5 × ~€79) — cheaper than the old ~€500 estimate because the 2026 Gold tier is ~€79, not ~€99.
+    *   **Includes:** Unlimited no-blackout entry, free parking, SEA LIFE, and the new Merlin-parks benefit.
+    *   *Note:* Tier names/benefits changed for 2026 — verify that Gold still covers everything you want (especially any LEGOLAND Water Park access) before buying; otherwise the €149 Platinum is the all-in option.
+*   **Cost check:** With your dates (10 days, likely 1–2 Gardaland visits), 5× Gold season passes (~€395) still beat 5× single-day tickets (~€280 for one visit) if you go **twice**, and add huge flexibility (SEA LIFE + Merlin parks). For a single visit, day tickets are cheaper.
 
 
 **Single Rider Lines:**
@@ -173,17 +177,16 @@ Your plan to use "Junior Passes" will likely **NOT work**.
 *   **The System:** They use a paid **"Single Ride Express"** system. You pay ~€3-€5 per ride to skip the queue on big attractions (Blue Tornado, Oblivion, etc).
 *   **Gold Pass Benefit:** Your Gold pass gives you **1 Free "Time Saver" ride per visit**. Since your kids won't use theirs, you could technically use your own pass for one ride, and maybe (if staff allow scanning different passes) use theirs for other rides, giving you up to 5 fast-track rides per day.
 
-**2. CanevaWorld Resort (Waterpark & Movies)**
-*   **1-Day Park Hopper:** ~€44 (Unlimited access to both Movieland + Aquapark).
-*   **2-Day Flex (Top Pick):** ~€56 per person.
-    *   *Why:* spend 1 full day at the Waterpark and 1 full day at Movieland.
-    *   *Flexibility:* Days do not need to be consecutive. Perfect for spreading out the fun.
+**2. CanevaWorld Resort (Caneva Aquapark + Movieland)**
+*Season 2026: 23 May – 13 Sep (check each park's individual opening calendar). Prices are height-based.*
+*   **Single park (Aquapark *or* Movieland), 2026 gate:** **€26** full (over 140cm), **€15** reduced (100–140cm), free under 100cm. Cheaper booked online in advance.
+*   **2-Park Combo (1 day Movieland + 1 day Caneva):** Best value — two separate, non-consecutive days, valid all 2026 season. Confirm the current combo price on canevaworld.it (or a reseller) when booking; the per-park online price is the better anchor than the old "park hopper" figure.
 
 **Est. Total for Family (2A+3C):**
-*   Gardaland (1 Day): ~€220
-*   CanevaWorld (2 Day Flex): ~€280
+*   Gardaland: ~**€280** for one day on tickets, or ~**€395** for 5× Gold season passes (better if visiting twice — see above).
+*   CanevaWorld (2-park combo, online): roughly ~**€110–€130** total for the family (5 × ~€22–€26), far less than the old ~€280 estimate.
 *   **(Optional) Cycling Rental (1 Day):** ~€80
-*   **Total Fun Budget:** **~€500 - €680**
+*   **Total Fun Budget:** **~€470 – €600** depending on Gardaland tickets vs. passes.
 
 ### 🏃 Running & Exercise Guide (The "Realistic" List)
 *To beat the heat (often 25°C+ by 9am), plan your runs for **06:30 - 07:30**.*
@@ -462,6 +465,8 @@ Your plan to use "Junior Passes" will likely **NOT work**.
 | **Accom** | Del Garda Village (10n) | €542.63 (Paid) | **€1,627.87** |
 | **Flights** | Dublin <-> Verona/Milan (Est) | - | ~€1,800.00 |
 | **Transport**| Private Transfers (Return) | - | ~€150.00 |
-| **Activities**| **5x Gardaland Gold Passes** | - | **~€500.00** |
+| **Activities**| **5x Gardaland Gold Passes** (2026: ~€79 ea) | - | **~€395.00** |
 | **Fees** | Taxes / Deposits | - | ~€122.00 |
-| **Total** | | | **~€4,200.00** |
+| **Total** | | | **~€4,100.00** |
+
+*Activities figure updated June 2026: 2026 Gold pass is ~€79 (was assumed €99), so 5 passes ≈ €395.*
