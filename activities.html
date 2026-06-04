@@ -19,22 +19,35 @@
     <script src="theme.js" defer></script>
 </head>
 <body>
-    <header style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Gardaland_Blue_Tornado.jpg/1280px-Gardaland_Blue_Tornado.jpg');">
+    <header class="site-header header-activities">
         <h1>4. Activities Guide</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="booking.html">Booking</a>
-            <a href="logistics.html">Logistics</a>
-            <a href="resort.html">Resort</a>
-            <a href="activities.html" class="active">Activities</a>
-            <a href="bikes.html">Bike Hire</a>
-            <a href="dining.html">Dining</a>
-            <a href="food.html">Food & Drink</a>
-            <a href="etiquette.html">Etiquette</a>
-            <a href="budget.html">Budget</a>
-            <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-        </nav>
     </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="booking.html">Booking</a>
+                <a href="logistics.html">Logistics</a>
+                <a href="resort.html">Resort</a>
+                <a href="activities.html" class="active">Activities</a>
+                <a href="gardaland.html">Gardaland</a>
+                <a href="canevaworld.html">CanevaWorld</a>
+                <a href="boats.html">Boat Hire</a>
+                <a href="daytrips.html">Day Trips</a>
+                <a href="bikes.html">Bike Hire</a>
+                <a href="running.html">Running</a>
+                <a href="dining.html">Dining</a>
+                <a href="food.html">Food &amp; Drink</a>
+                <a href="etiquette.html">Etiquette</a>
+                <a href="packing.html">Packing</a>
+                <a href="budget.html">Budget</a>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
     <main>
         <h3>Crowd Prediction: "The Sweet Spot"</h3>
         <p>You have timed this very well.</p>
@@ -52,172 +65,49 @@
             <li><strong>Early vs Late:</strong> The first week (June 27 - July 3) should be slightly quieter than your final few days (July 4-7) as Northern European schools start to break up. Do your "must-do" big excursions early in the week.</li>
         </ul>
 
-        <h3>Theme Park Pricing (Verified June 2026)</h3>
-        <p><em>Official 2026 rates (gardaland.it). Always book online in advance — gate prices are higher.</em></p>
-
-        <h4>1. Gardaland (The Big One)</h4>
+        <h3>Theme Parks &amp; Water Parks</h3>
+        <p>The big-ticket days now have their own pages with full pricing, ride lists,
+            ratings and height requirements:</p>
         <ul>
-            <li><strong>Daily Ticket (2026):</strong> <strong>€56</strong> full price (age 10+), <strong>€50</strong> reduced (100cm up to age 10), free under 100cm. <em>(Up from ~€44–49 in 2025.)</em> Cheaper via dated online/early-bird offers.</li>
+            <li><strong>Gardaland (~7&nbsp;km):</strong> Italy's #1 theme park. See the
+                <a href="gardaland.html">Gardaland page</a> for tickets (~€56/€50), the
+                2026 season-pass strategy, and which rides our ~120&nbsp;cm kids can ride
+                (most family rides; not the 140&nbsp;cm thrill coasters).</li>
+            <li><strong>CanevaWorld (~4&nbsp;km):</strong> Caneva Aquapark + Movieland. See the
+                <a href="canevaworld.html">CanevaWorld page</a> for height-based pricing and the
+                full slide/ride and stunt-show guide.</li>
         </ul>
+        <p><strong>Crowd tip:</strong> do the big parks <strong>mid-week</strong> and keep
+            weekends for the pool and a walk into Peschiera. See the
+            <a href="budget.html">Budget</a> for the family fun-day totals.</p>
 
-        <h4>Season Pass Strategy (Restructured for 2026)</h4>
-        <p><strong>Critical Update:</strong><br>
-        Your plan to use "Junior Passes" will likely <strong>NOT work</strong>.</p>
-        <ul>
-            <li><strong>Junior Pass Rule:</strong> Strictly for children <strong>under 6 years old</strong> (or <1m height).</li>
-            <li><strong>Your Kids (7, 7, 9):</strong> Will need standard passes (Silver / Gold / Platinum).</li>
-        </ul>
-        <p>Gardaland <strong>renamed and re-tiered its passes for 2026</strong> — three tiers now. Indicative new-buyer prices (confirm exact figures on gardaland.it, offers change):</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Feature</th>
-                    <th>Silver (from ~€59)</th>
-                    <th>Gold (~€79)</th>
-                    <th>Platinum (~€149)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Park Entry</strong></td>
-                    <td>Unlimited (some blackout dates)</td>
-                    <td><strong>Unlimited, no blackouts</strong></td>
-                    <td><strong>Unlimited, no blackouts</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Parking</strong></td>
-                    <td>Included</td>
-                    <td><strong>Included</strong></td>
-                    <td><strong>Included</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>SEA LIFE Aquarium</strong></td>
-                    <td>Not included</td>
-                    <td><strong>Included</strong></td>
-                    <td><strong>Included</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Merlin parks (NEW 2026)</strong></td>
-                    <td>—</td>
-                    <td>Free entry to 20+ Merlin attractions across Europe (incl. LEGOLAND parks)</td>
-                    <td>As Gold, plus extra perks</td>
-                </tr>
-                <tr>
-                    <td><strong>Fast Track / Extras</strong></td>
-                    <td>None</td>
-                    <td>Limited</td>
-                    <td><strong>Best</strong> (priority, more perks)</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p><strong>Confirmed Strategy:</strong></p>
-        <ul>
-            <li><strong>5x Gold Passes:</strong> <strong>~€395 total</strong> (5 × ~€79) — cheaper than the old ~€500 estimate, as the 2026 Gold tier is ~€79, not ~€99.
-                <ul>
-                    <li><strong>Includes:</strong> Unlimited no-blackout entry, free parking, SEA LIFE, and the new Merlin-parks benefit.</li>
-                    <li><em>Note:</em> Tier names/benefits changed for 2026 — verify Gold covers everything you want (especially any LEGOLAND Water Park access) before buying; otherwise the €149 Platinum is the all-in option.</li>
-                </ul>
-            </li>
-            <li><strong>Cost check:</strong> 5× Gold season passes (~€395) beat 5× single-day tickets (~€280 for one visit) only if you visit <strong>twice</strong>, and add flexibility (SEA LIFE + Merlin parks). For a single visit, day tickets are cheaper.</li>
-        </ul>
-
-        <p><strong>Single Rider Lines:</strong></p>
-        <ul>
-            <li><strong>Bad News:</strong> Gardaland does <strong>not</strong> generally have free "Single Rider" lines (except occasionally <em>Raptor</em>).</li>
-            <li><strong>The System:</strong> They use a paid <strong>"Single Ride Express"</strong> system. You pay ~€3-€5 per ride to skip the queue on big attractions (Blue Tornado, Oblivion, etc).</li>
-            <li><strong>Gold Pass Benefit:</strong> Your Gold pass gives you <strong>1 Free "Time Saver" ride per visit</strong>. Since your kids won't use theirs, you could technically use your own pass for one ride, and maybe (if staff allow scanning different passes) use theirs for other rides, giving you up to 5 fast-track rides per day.</li>
-        </ul>
-
-        <h4>2. CanevaWorld Resort (Caneva Aquapark + Movieland)</h4>
-        <p><em>Season 2026: 23 May – 13 Sep (check each park's individual opening calendar). Prices are height-based.</em></p>
-        <ul>
-            <li><strong>Single park (Aquapark <em>or</em> Movieland), 2026 gate:</strong> <strong>€26</strong> full (over 140cm), <strong>€15</strong> reduced (100–140cm), free under 100cm. Cheaper booked online in advance.</li>
-            <li><strong>2-Park Combo (1 day Movieland + 1 day Caneva):</strong> Best value — two separate, non-consecutive days, valid all 2026 season. Confirm the current combo price on canevaworld.it (or a reseller) when booking.</li>
-        </ul>
-
-        <p><strong>Est. Total for Family (2A+3C):</strong></p>
-        <ul>
-            <li>Gardaland: ~<strong>€280</strong> for one day on tickets, or ~<strong>€395</strong> for 5× Gold season passes (better if visiting twice).</li>
-            <li>CanevaWorld (2-park combo, online): roughly ~<strong>€110–€130</strong> total for the family — far less than the old ~€280 estimate.</li>
-            <li><strong>(Optional) Cycling Rental (1 Day):</strong> ~€80</li>
-            <li><strong>Total Fun Budget:</strong> <strong>~€470 – €600</strong> depending on Gardaland tickets vs. passes.</li>
-        </ul>
-
-        <h3>🏃 Running & Exercise Guide (The "Realistic" List)</h3>
-        <p><em>To beat the heat (often 25°C+ by 9am), plan your runs for <strong>06:30 - 07:30</strong>.</em></p>
-
+        <h3>Other Family Excursions</h3>
         <ol>
-            <li><strong>Route A: The Pacengo Harbor Loop (~5km)</strong>
-                <ul>
-                    <li><strong>The Route:</strong> Turn <strong>LEFT</strong> out of the campsite gate to hit the lake promenade. Run North until you hit the little harbor at <strong>Pacengo</strong>, then turn back.</li>
-                    <li><strong>Terrain:</strong> Paved, flat, hugging the water.</li>
-                    <li><strong>Tip:</strong> Go <em>early</em> (before 8am). After that, it fills with pedestrians.</li>
-                </ul>
-            </li>
-            <li><strong>Route B: The Mincio 5k (Out & Back)</strong>
-                <ul>
-                    <li><strong>The Route:</strong> Head to Porta Brescia and hop on the <em>Ciclovia Mantova</em>. Run South for ~2.5km (until you see the first weir/dam), then loop back.</li>
-                    <li><strong>Terrain:</strong> Gravel/Paved path, tree-lined river bank. Safe from cars.</li>
-                </ul>
-            </li>
-            <li><strong>Route C: The Fortress Walls Loop (~4.5km)</strong>
-                <ul>
-                    <li><strong>The Route:</strong> Run from campsite to town -> Do one full loop on top of the historic red brick walls -> Run home.</li>
-                    <li><strong>Terrain:</strong> Mixed (Paved/Cobbles). Great views!</li>
-                </ul>
-            </li>
-        </ol>
-
-        <h3>Weather & Packing (Late June / Early July)</h3>
-        <ul>
-            <li><strong>The Vibe:</strong> Hot summer days, but unpredictable evenings.</li>
-            <li><strong>Temperatures:</strong>
-                <ul>
-                    <li>Day: <strong>26°C - 30°C</strong> (Perfect pool weather).</li>
-                    <li>Night: <strong>18°C - 20°C</strong> (Comfortable for sleeping).</li>
-                </ul>
-            </li>
-            <li><strong>The "Lake Garda Storms":</strong>
-                <ul>
-                    <li>Thunderstorms are <em>very common</em> in late afternoon/evening. They are intense, loud, but usually pass quickly (30-60 mins).</li>
-                    <li><strong>Packing Essential:</strong> A lightweight <strong>Rain Jacket / Mac-in-a-sac</strong> is mandatory. Do not assume it will be dry for 10 days straight.</li>
-                </ul>
-            </li>
-            <li><strong>Packing List Extras:</strong>
-                <ul>
-                    <li><strong>Water Shoes:</strong> Many lake beaches are pebbly (not sandy).</li>
-                    <li><strong>Mosquito Repellent:</strong> Essential for evenings by the lake.</li>
-                    <li><strong>Cardigan/Hoodie:</strong> It can actually feel cool after a storm in the evening.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>Theme Parks</h3>
-        <ul>
-            <li><strong>Gardaland (~7km):</strong> Italy's #1 Theme Park.
-                <ul>
-                    <li><em>Suitability (120cm):</em> ~90% accessible. <em>Jumanji</em>, <em>Mammut</em>, <em>Jungle Rapids</em>.</li>
-                    <li><em>Tip:</em> Use the shuttle or drive. Go mid-week if possible.</li>
-                </ul>
-            </li>
-            <li><strong>Caneva Aquapark (~4km):</strong> Massive tropical waterpark.
-                <ul>
-                    <li><em>Suitability:</em> Excellent. <em>Lazy River</em> and <em>Shark Bay</em> are highlights.</li>
-                </ul>
-            </li>
-            <li><strong>Movieland Studios:</strong> Hollywood-themed park next to Caneva. Great stunt shows.</li>
-        </ul>
-
-        <h3>Top Family Excursions</h3>
-        <ol>
-            <li><strong>Rent a Boat (Peschiera):</strong> Hiring a small motorboat (no license needed) to drive extensively on the lake.</li>
-            <li><strong>Sirmione Ferry:</strong> Take the boat from Peschiera to Sirmione to see the castle and eat giant ice creams.</li>
+            <li><strong>Boat hire / Sirmione ferry:</strong> drive a no-licence motorboat or take
+                the ferry to Sirmione — full options on the <a href="boats.html">Boat Hire page</a>.</li>
+            <li><strong>Day trips to Verona &amp; Venice:</strong> both an easy train ride away — see the
+                <a href="daytrips.html">Day Trips page</a>.</li>
             <li><strong>Parco Natura Viva:</strong> Safari park (drive-through section + walk-through zoo).</li>
             <li><strong>Sigurtà Garden Park:</strong> Rent a golf cart (kids love this) to tour the massive gardens.</li>
             <li><strong>Monte Baldo Cable Car:</strong> Drive to Malcesine (~50 mins) for the rotating cable car up the mountain.</li>
         </ol>
+
+        <h3>Weather (Late June / Early July)</h3>
+        <ul>
+            <li><strong>Temperatures:</strong> day <strong>26°C&ndash;30°C</strong> (perfect pool weather),
+                night <strong>18°C&ndash;20°C</strong> (comfortable for sleeping).</li>
+            <li><strong>The "Lake Garda storms":</strong> intense late-afternoon thunderstorms are common
+                but usually pass in 30&ndash;60&nbsp;mins. A lightweight <strong>rain jacket / Mac-in-a-sac</strong>
+                is essential — see the full <a href="packing.html">Packing List</a>.</li>
+        </ul>
+
+        <h3>Get Out &amp; Active</h3>
+        <ul>
+            <li><strong>Running:</strong> flat lakeside and river routes from the gate — see the
+                <a href="running.html">Running Guide</a>.</li>
+            <li><strong>Cycling:</strong> bike hire options and family routes on the
+                <a href="bikes.html">Bike Hire page</a>.</li>
+        </ul>
 
         <h3>For Adults</h3>
         <ol>

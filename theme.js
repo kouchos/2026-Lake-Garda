@@ -77,3 +77,69 @@
         init();
     }
 })();
+
+/* Mobile side-menu (off-canvas drawer) toggle. Shared across all pages. */
+(function () {
+    'use strict';
+
+    function initNav() {
+        var toggle = document.querySelector('.nav-toggle');
+        var backdrop = document.querySelector('.nav-backdrop');
+        var drawer = document.getElementById('nav-links');
+        if (!toggle || !drawer) {
+            return;
+        }
+
+        function setOpen(open) {
+            document.body.classList.toggle('nav-open', open);
+            toggle.setAttribute('aria-expanded', String(open));
+            if (backdrop) {
+                backdrop.hidden = !open;
+            }
+        }
+
+        toggle.addEventListener('click', function () {
+            setOpen(!document.body.classList.contains('nav-open'));
+        });
+
+        if (backdrop) {
+            backdrop.addEventListener('click', function () {
+                setOpen(false);
+            });
+        }
+
+        // Close when a link is tapped or Escape is pressed.
+        drawer.addEventListener('click', function (e) {
+            if (e.target.closest('a')) {
+                setOpen(false);
+            }
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                setOpen(false);
+            }
+        });
+
+        // Reset state if the viewport grows back to desktop width.
+        if (window.matchMedia) {
+            var mq = window.matchMedia('(min-width: 641px)');
+            var onChange = function (e) {
+                if (e.matches) {
+                    setOpen(false);
+                }
+            };
+            if (mq.addEventListener) {
+                mq.addEventListener('change', onChange);
+            } else if (mq.addListener) {
+                mq.addListener(onChange);
+            }
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initNav);
+    } else {
+        initNav();
+    }
+})();

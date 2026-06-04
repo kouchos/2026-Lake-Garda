@@ -19,22 +19,35 @@
     <script src="theme.js" defer></script>
 </head>
 <body>
-    <header style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Mercedes-Benz_V-Class_%28W_447%29_Avantgarde_Edition_Lang_front_Ansicht_26._Mai_2019_Velten.jpg/1280px-Mercedes-Benz_V-Class_%28W_447%29_Avantgarde_Edition_Lang_front_Ansicht_26._Mai_2019_Velten.jpg');">
+    <header class="site-header header-logistics">
         <h1>2. Logistics (To Be Booked)</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="booking.html">Booking</a>
-            <a href="logistics.html" class="active">Logistics</a>
-            <a href="resort.html">Resort</a>
-            <a href="activities.html">Activities</a>
-            <a href="bikes.html">Bike Hire</a>
-            <a href="dining.html">Dining</a>
-            <a href="food.html">Food & Drink</a>
-            <a href="etiquette.html">Etiquette</a>
-            <a href="budget.html">Budget</a>
-            <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-        </nav>
     </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="booking.html">Booking</a>
+                <a href="logistics.html" class="active">Logistics</a>
+                <a href="resort.html">Resort</a>
+                <a href="activities.html">Activities</a>
+                <a href="gardaland.html">Gardaland</a>
+                <a href="canevaworld.html">CanevaWorld</a>
+                <a href="boats.html">Boat Hire</a>
+                <a href="daytrips.html">Day Trips</a>
+                <a href="bikes.html">Bike Hire</a>
+                <a href="running.html">Running</a>
+                <a href="dining.html">Dining</a>
+                <a href="food.html">Food &amp; Drink</a>
+                <a href="etiquette.html">Etiquette</a>
+                <a href="packing.html">Packing</a>
+                <a href="budget.html">Budget</a>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
     <main>
         <h3>Flights (✅ BOOKED — Aer Lingus, both ways via Verona)</h3>
         <ul>
