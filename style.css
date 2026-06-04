@@ -221,12 +221,15 @@ body.nav-open .nav-toggle-icon { background: transparent; }
 body.nav-open .nav-toggle-icon::before { transform: translateY(6px) rotate(45deg); }
 body.nav-open .nav-toggle-icon::after  { transform: translateY(-6px) rotate(-45deg); }
 
-/* Backdrop behind the mobile drawer (only shown on mobile when open). */
+/* Backdrop behind the mobile drawer (only shown on mobile when open).
+   The drawer lives inside <nav> (z-index 1000), which forms its own stacking
+   context, so the backdrop must sit BELOW that context — otherwise it paints
+   (and blurs) on top of the open menu. It still covers the header/main behind. */
 .nav-backdrop {
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 1100;
+    z-index: 900;
     background: var(--overlay);
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
