@@ -4,53 +4,53 @@ Guidance for AI assistants working in this repository.
 
 ## What this repository is
 
-This is **not a software project** — it is a planning workspace for a family
+This is **not a software project** — it is the planning workspace for a family
 holiday to **Lake Garda, Italy** (Del Garda Village & Camping, Peschiera del
-Garda) in summer 2026. It contains:
+Garda) in summer 2026.
 
-1. **Markdown source documents** — the research and planning of record.
-2. **A static HTML website** — a presentable, hand-maintained rendering of the
-   confirmed plan.
+**The static HTML website is now the focus and the single source of truth.** It
+is the surface the family actually reads. The goal is to keep these pages clean,
+accurate, and **easy for the trip owner and his wife to access — most likely by
+hosting them on GitHub (GitHub Pages)**. Keep that hosting goal in mind: pages
+must work as plain static files served from the repo root.
 
-There is no build system, package manager, framework, test suite, or CI for the
-content. The HTML is plain static files; open them directly in a browser. Do not
-add tooling (npm, bundlers, static-site generators) unless explicitly asked.
+The original markdown planning/research docs have been **archived in
+`backup-markdowns/`**. They are historical reference only — **do not treat them
+as current and do not maintain them**. When the plan changes, edit the **HTML**.
+
+There is no build system, package manager, framework, test suite, or CI. The
+HTML is plain static files; open them directly in a browser. Do not add tooling
+(npm, bundlers, static-site generators) unless explicitly asked — it would work
+against the "simple, GitHub-Pages-hostable" goal.
 
 ## Layout
 
-### Markdown documents (source of truth for planning)
-- `README.md` — repo intro, high-level trip overview, and the planning to-do list.
-- `itinerary.md` — **the authoritative confirmed plan**: dates, booking details,
-  costs, day-by-day schedule, logistics. The most detailed document.
-- `flights.md` — flight + airport-transfer research (Dublin → Verona).
-- `agents.md` — a persona/prompt brief defining how a "personal travel agent"
-  assistant should make recommendations (see *Travel-agent persona* below).
-
-### Static website (one shared stylesheet, hand-written pages)
-- `index.html` — home page (overview + key dates table).
+### Active site (root — this is what you edit)
+- `index.html` — home page (overview + key dates table). **This is the GitHub
+  Pages landing page.**
 - `booking.html`, `logistics.html`, `resort.html`, `activities.html`,
   `dining.html`, `food.html`, `etiquette.html`, `budget.html` — section pages.
 - `style.css` — the single shared stylesheet for every page.
+- `CLAUDE.md` — this file (stays at root).
 
-The HTML site is effectively a presentation layer derived from `itinerary.md`
-and the research docs.
+### Archive (reference only — not maintained)
+- `backup-markdowns/` — the former source docs: `README.md`, `itinerary.md`
+  (the old master plan), `flights.md` (flight + transfer research), `agents.md`
+  (a "personal travel agent" persona brief). The HTML mirrors the useful content
+  of these; treat the HTML as authoritative if they ever disagree.
 
-## Key trip facts (keep these consistent across all files)
+## Key trip facts (keep these consistent across all HTML pages)
 
 - **Base:** Del Garda Village & Camping, Via Marzan 92, 37019 Peschiera del
-  Garda VR, Italy. Mobile Home "Clivia Medium (4+1)".
+  Garda VR, Italy. Mobile Home "Clivia Medium (4+1)". Booking ref
+  `2026011245404197`.
 - **Party:** 2 adults + 3 children — Rachel (b. Apr 2017, ~9) and twins Jessica
   & Rebecca (b. Jun 2019, ~7).
-- **Confirmed dates:** Sat 27 June 2026 → Tue 7 July 2026 (**10 nights**).
-- **Booking reference:** `2026011245404197`.
-- **Route:** Dublin (DUB) → Verona (VRN) preferred; Bergamo (BGY) / Venice (VCE)
-  as fallbacks. Airport transfer via private minivan (e.g. Ziptransfers, ~€150
-  return).
-
-> **Known inconsistency:** `README.md` still lists older draft dates (June 27 –
-> July 5, "9 Days, 8 Nights"). `itinerary.md` and the HTML site carry the
-> **confirmed** "10 nights / depart July 7" figures and win on any conflict. If
-> you touch dates/duration, reconcile `README.md` too.
+- **Dates:** Sat 27 June 2026 → Tue 7 July 2026 (**10 nights**).
+- **Flights (BOOKED):** Aer Lingus both ways. Out Sat 27 June, depart Dublin
+  (DUB) **16:10**, arrive Verona (VRN) ~19:45. Back Tue 7 July, depart VRN
+  **19:15**, arrive DUB ~20:50. Total fare ~€2,800. Airport transfer to the
+  resort via private minivan (e.g. Ziptransfers, ~€150 return).
 
 ## Conventions
 
@@ -64,43 +64,40 @@ and the research docs.
   `style.css`, a `<header>` whose inline `background-image` is a Wikimedia
   Commons URL, the shared `<nav>` (with `class="active"` on the current page),
   a `<main>`, and a `<footer>`.
+- **Keep links relative** (`style.css`, `booking.html`, …) so the site works
+  unchanged when served from GitHub Pages.
 - **Styling lives only in `style.css`** (CSS custom properties in `:root`, e.g.
   `--primary-color: #0077be`). Reuse existing classes (`.map-link`, tables, etc.)
   rather than adding inline styles, except for the per-page header background
-  image which is intentionally inline.
+  image which is intentionally inline. The stylesheet is already mobile-friendly
+  (`@media (max-width: 600px)`) — preserve that, since the family will read on
+  phones.
 - Keep section headings numbered consistently with their titles (e.g.
   "4. Activities Guide").
 
 ### Editing content
 - Recommendations are **family-first**: note child suitability, and for nearby
   spots include walking and cycling times from the resort.
-- **Link every named place** to a Google Maps link in parentheses after the
-  bolded place name (per `agents.md`).
-- Currency is **euro (€)**; dates are written in long form (e.g. "Tue 7 July 2026").
-- Flag costs/times that still need user verification rather than presenting
-  estimates as confirmed.
-- When the plan changes, update `itinerary.md` first, then mirror the change
-  into the relevant HTML page(s).
-
-### Travel-agent persona (`agents.md`)
-When asked to *suggest activities, dining, or daily plans*, follow `agents.md`:
-categorize as **"The Local Loop"** (walk/cycle distance), **"Lake Adventures"**
-(ferry/drive day trips), or **"Dining & Gelato"**; bold place names; add Google
-Maps links and walking/cycling times; and close each day with a
-**"Logistics Summary"**. Tailor to the children's ages.
+- **Link every named place** to a Google Maps link (use the `.map-link` style)
+  after the bolded place name.
+- Currency is **euro (€)**; dates in long form (e.g. "Tue 7 July 2026").
+- Flag costs/times that still need verification rather than presenting estimates
+  as confirmed. Where useful, date a figure (e.g. "Verified June 2026").
 
 ## Git workflow
 
 - Default branch is `master`. Changes land via **pull requests** (history shows
   squash/merge PRs with descriptive titles).
-- Commit messages are short and descriptive (e.g. "Update flights.md with
-  explicit Jan 2026 schedule data").
+- Commit messages are short and descriptive.
 - Do **not** open a pull request unless explicitly asked.
+- If asked to set up hosting, the intended path is **GitHub Pages** serving the
+  repo root (`index.html`).
 
 ## Quick checklist before finishing a change
-- [ ] If dates/booking/party facts changed, are they consistent across
-      `itinerary.md`, the HTML site, and `README.md`?
-- [ ] If you added/removed/renamed an HTML page, is the `<nav>` updated in
-      **all** pages, with `active` set correctly?
+- [ ] Did you edit the **HTML** (not the archived markdown)?
+- [ ] If dates/booking/party/flight facts changed, are they consistent across
+      **all** HTML pages (home, logistics, budget especially)?
+- [ ] If you added/removed/renamed a page, is the `<nav>` updated in **all**
+      pages, with `active` set correctly?
+- [ ] Are links relative and styling reusing `style.css` (no stray inline CSS)?
 - [ ] New place mentions have Google Maps links (and walk/cycle times if local)?
-- [ ] Styling reuses `style.css` rather than introducing inline CSS?
