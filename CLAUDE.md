@@ -28,9 +28,14 @@ against the "simple, GitHub-Pages-hostable" goal.
 ### Active site (root — this is what you edit)
 - `index.html` — home page (overview + key dates table). **This is the GitHub
   Pages landing page.**
-- `booking.html`, `logistics.html`, `resort.html`, `activities.html`,
-  `dining.html`, `food.html`, `etiquette.html`, `budget.html` — section pages.
+- Section pages (23 pages total, all sharing the nav): `itinerary.html`,
+  `booking.html`, `logistics.html`, `essentials.html`, `resort.html`,
+  `activities.html`, `gardaland.html`, `canevaworld.html`, `boats.html`,
+  `daytrips.html`, `towns.html`, `nature.html`, `beaches.html`, `markets.html`,
+  `bikes.html`, `running.html`, `dining.html`, `food.html`, `etiquette.html`,
+  `phrases.html`, `packing.html`, `budget.html`.
 - `style.css` — the single shared stylesheet for every page.
+- `theme.js` — shared light/dark toggle + mobile nav drawer behaviour.
 - `CLAUDE.md` — this file (stays at root).
 
 ### Archive (reference only — not maintained)
@@ -55,23 +60,31 @@ against the "simple, GitHub-Pages-hostable" goal.
 ## Conventions
 
 ### Editing the website
-- **Navigation must stay in sync.** Every page repeats the same `<nav>` block
-  linking all nine pages (Home, Booking, Logistics, Resort, Activities, Dining,
-  Food & Drink, Etiquette, Budget). When you **add, remove, or rename a page,
+- **Navigation must stay in sync.** Every page repeats the same `<nav id="site-nav">`
+  block linking all 23 pages (Home, Itinerary, Booking, Logistics, Essentials,
+  Resort, Activities, Gardaland, CanevaWorld, Boat Hire, Day Trips, Towns,
+  Nature & Parks, Beaches, Markets, Bike Hire, Running, Dining, Food & Drink,
+  Etiquette, Phrases, Packing, Budget). When you **add, remove, or rename a page,
   update the `<nav>` in every other HTML file** — there is no shared template or
-  include.
+  include. The nav block is identical across all pages except for the single
+  `class="active"` link, so the easiest safe way to re-sync after a change is a
+  small find/replace script over every `*.html` file.
 - **Page skeleton:** each page is a full HTML document with `<head>` linking
-  `style.css`, a `<header>` whose inline `background-image` is a Wikimedia
-  Commons URL, the shared `<nav>` (with `class="active"` on the current page),
-  a `<main>`, and a `<footer>`.
+  `style.css` (plus the inline no-flash theme script and `theme.js`), a
+  `<header class="site-header header-NAME">` (the header background is a **CSS
+  gradient** defined by the `.header-NAME` class in `style.css` — there are no
+  external/inline header images), the shared `<nav id="site-nav">` (with
+  `class="active"` on the current page) followed by `<div class="nav-backdrop" hidden>`,
+  a `<main>`, and a `<footer>`. When you add a page, add a matching
+  `.header-NAME` gradient in `style.css`.
 - **Keep links relative** (`style.css`, `booking.html`, …) so the site works
   unchanged when served from GitHub Pages.
 - **Styling lives only in `style.css`** (CSS custom properties in `:root`, e.g.
-  `--primary-color: #0077be`). Reuse existing classes (`.map-link`, tables, etc.)
-  rather than adding inline styles, except for the per-page header background
-  image which is intentionally inline. The stylesheet is already mobile-friendly
-  (`@media (max-width: 600px)`) — preserve that, since the family will read on
-  phones.
+  `--primary-color: #0077be`, plus a `[data-theme="dark"]` set for dark mode).
+  Reuse existing classes (`.map-link`, tables, etc.) rather than adding inline
+  styles. The stylesheet is already mobile-friendly (`@media (max-width: 640px)`,
+  which turns the nav into an off-canvas drawer) — preserve that, since the family
+  will read on phones.
 - Keep section headings numbered consistently with their titles (e.g.
   "4. Activities Guide").
 

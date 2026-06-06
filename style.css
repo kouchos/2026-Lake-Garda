@@ -133,6 +133,13 @@ body {
 .header-etiquette   { background: linear-gradient(135deg, #6d4c2f 0%, #b08247 100%); }
 .header-packing     { background: linear-gradient(135deg, #4338ca 0%, #7c3aed 100%); }
 .header-budget      { background: linear-gradient(135deg, #166534 0%, #ca8a04 100%); }
+.header-itinerary   { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #38bdf8 100%); }
+.header-essentials  { background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%); }
+.header-towns       { background: linear-gradient(135deg, #155e75 0%, #0d9488 100%); }
+.header-nature      { background: linear-gradient(135deg, #15803d 0%, #4d7c0f 60%, #a3b833 100%); }
+.header-beaches     { background: linear-gradient(135deg, #0e7490 0%, #22d3ee 60%, #fcd34d 100%); }
+.header-markets     { background: linear-gradient(135deg, #b45309 0%, #ea580c 60%, #f59e0b 100%); }
+.header-phrases     { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 60%, #a78bfa 100%); }
 
 /* ---- Navigation (desktop pill bar) ----------------------------------- */
 nav {
