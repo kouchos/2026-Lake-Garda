@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Garda Itinerary - Lakeside Towns</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    <header class="site-header header-towns">
+        <h1>Lakeside Towns</h1>
+    </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="itinerary.html">Itinerary</a>
+                <a href="booking.html">Booking</a>
+                <a href="logistics.html">Logistics</a>
+                <a href="essentials.html">Essentials</a>
+                <a href="resort.html">Resort</a>
+                <a href="activities.html">Activities</a>
+                <a href="gardaland.html">Gardaland</a>
+                <a href="canevaworld.html">CanevaWorld</a>
+                <a href="boats.html">Boat Hire</a>
+                <a href="daytrips.html">Day Trips</a>
+                <a href="towns.html" class="active">Towns</a>
+                <a href="nature.html">Nature &amp; Parks</a>
+                <a href="beaches.html">Beaches</a>
+                <a href="markets.html">Markets</a>
+                <a href="bikes.html">Bike Hire</a>
+                <a href="running.html">Running</a>
+                <a href="dining.html">Dining</a>
+                <a href="food.html">Food &amp; Drink</a>
+                <a href="etiquette.html">Etiquette</a>
+                <a href="phrases.html">Phrases</a>
+                <a href="packing.html">Packing</a>
+                <a href="budget.html">Budget</a>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
+    <main>
+        <p>Beyond Peschiera, the lake is ringed with gorgeous little towns. The nicest way to reach
+            most of them is the <strong>Navigazione Laghi ferry</strong> from Peschiera harbour
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Navigazione+Lago+di+Garda+Peschiera" target="_blank">Map</a>
+            &mdash; no parking stress, and the boat ride is half the fun (see <a href="boats.html">Boat Hire</a>).
+            Here are the ones worth your time, closest first.</p>
+
+        <h2>Getting Around the Towns</h2>
+        <table>
+            <thead><tr><th>Town</th><th>Direction</th><th>By car</th><th>Ferry / notes</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Lazise</strong></td><td>North, ~7 km</td><td>~12 min</td><td>Frequent ferry; closest pretty town</td></tr>
+                <tr><td><strong>Bardolino</strong></td><td>North, ~13 km</td><td>~20 min</td><td>Ferry; wine town</td></tr>
+                <tr><td><strong>Garda</strong></td><td>North, ~17 km</td><td>~25 min</td><td>Ferry; lively promenade</td></tr>
+                <tr><td><strong>Sirmione</strong></td><td>West (over the bay)</td><td>~25 min</td><td>Ferry ~20&ndash;30 min; cars restricted in old town</td></tr>
+                <tr><td><strong>Malcesine</strong></td><td>Far north, ~55 km</td><td>~1 h+</td><td>Long ferry or drive &mdash; a full day out</td></tr>
+            </tbody>
+        </table>
+        <p><em>Ferry times and fares change seasonally &mdash; check the Navigazione Laghi timetable
+            for your dates. Children travel at a reduced fare.</em></p>
+
+        <h2>Sirmione &mdash; the Showstopper</h2>
+        <p><strong>Sirmione</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sirmione+old+town" target="_blank">Map</a>
+            sits on a long thin peninsula and is the most spectacular town on the lake. Cars can&rsquo;t
+            enter the old town, so the <strong>ferry from Peschiera is ideal</strong>.</p>
+        <ul>
+            <li><strong>Scaliger Castle</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Castello+Scaligero+Sirmione" target="_blank">Map</a>
+                &mdash; a fairytale moated castle you can climb (great for the kids; some steep steps).</li>
+            <li><strong>Grotte di Catullo</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Grotte+di+Catullo+Sirmione" target="_blank">Map</a>
+                &mdash; sprawling Roman villa ruins at the tip, with olive groves and lake views.</li>
+            <li><strong>Jamaica Beach</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jamaica+Beach+Sirmione" target="_blank">Map</a>
+                &mdash; famous flat rock &ldquo;beach&rdquo; with shallow turquoise water near the ruins.
+                Water shoes essential.</li>
+            <li><strong>Aquaria Thermal Spa</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Aquaria+Thermal+Spa+Sirmione" target="_blank">Map</a>
+                &mdash; lakeside thermal pools (check the minimum age for children before planning a visit).</li>
+            <li><strong>Family note:</strong> lovely but it gets <strong>very busy</strong> in peak season &mdash;
+                go early or late, and keep small ones close on the narrow lanes.</li>
+        </ul>
+
+        <h2>Lazise &mdash; Closest &amp; Easiest</h2>
+        <p><strong>Lazise</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Lazise+old+town" target="_blank">Map</a>
+            is the nearest of the walled towns &mdash; a pretty harbour, medieval walls, a little castle
+            and easy lakefront strolling. Plenty of gelato and family-friendly restaurants, and it&rsquo;s
+            right beside <a href="canevaworld.html">CanevaWorld</a>. A relaxed half-day or evening out.</p>
+
+        <h2>Bardolino &amp; Garda</h2>
+        <ul>
+            <li><strong>Bardolino</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bardolino+lungolago" target="_blank">Map</a>
+                &mdash; the wine town (of the light red of the same name), with a long lakefront promenade
+                perfect for an evening passeggiata and a spritz. An olive-oil and wine museum nearby for a rainy hour.</li>
+            <li><strong>Garda</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Garda+town+lungolago" target="_blank">Map</a>
+                &mdash; lively and characterful, with a buzzy waterfront, good gelato and a big
+                <a href="markets.html">Friday market</a>.</li>
+        </ul>
+
+        <h2>Malcesine &amp; Monte Baldo (a Big Day)</h2>
+        <p><strong>Malcesine</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Malcesine+Scaliger+Castle" target="_blank">Map</a>
+            is the prettiest village on the upper lake, with another Scaliger castle right on the water.
+            Its star turn is the <strong>Monte Baldo cable car</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Funivia+Malcesine+Monte+Baldo" target="_blank">Map</a>
+            &mdash; rotating cabins that climb to ~1,760 m for cool mountain air and huge views (a relief
+            on a hot day). It&rsquo;s a long way from Peschiera (~1 h+ each way), so treat it as a
+            <strong>full-day trip</strong> and go early to beat the cable-car queues. <em>(Verify cable-car
+            running times and prices before you go.)</em></p>
+
+        <h2>Tips for Town Days</h2>
+        <ul>
+            <li><strong>Take the ferry where you can</strong> &mdash; no ZTL/parking hassle, and the kids
+                love being on the boat.</li>
+            <li><strong>Go early or after 5pm</strong> &mdash; the old towns bake and crowd at midday.</li>
+            <li><strong>Eat two streets back</strong> from the waterfront for better food and prices
+                (see <a href="etiquette.html">Etiquette</a>).</li>
+            <li><strong>Pair a town with its market day</strong> &mdash; see the <a href="markets.html">Markets page</a>.</li>
+        </ul>
+
+        <p style="margin-top:28px"><em>Distances, ferry times and attraction prices flagged for
+            <strong>verification</strong> &mdash; confirm close to your travel date.</em></p>
+    </main>
+    <footer>
+        <p>Summer 2026 Trip to Lake Garda</p>
+    </footer>
+</body>
+</html>

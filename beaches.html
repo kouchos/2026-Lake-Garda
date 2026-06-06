@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Garda Itinerary - Beaches</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    <header class="site-header header-beaches">
+        <h1>Beaches Guide</h1>
+    </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="itinerary.html">Itinerary</a>
+                <a href="booking.html">Booking</a>
+                <a href="logistics.html">Logistics</a>
+                <a href="essentials.html">Essentials</a>
+                <a href="resort.html">Resort</a>
+                <a href="activities.html">Activities</a>
+                <a href="gardaland.html">Gardaland</a>
+                <a href="canevaworld.html">CanevaWorld</a>
+                <a href="boats.html">Boat Hire</a>
+                <a href="daytrips.html">Day Trips</a>
+                <a href="towns.html">Towns</a>
+                <a href="nature.html">Nature &amp; Parks</a>
+                <a href="beaches.html" class="active">Beaches</a>
+                <a href="markets.html">Markets</a>
+                <a href="bikes.html">Bike Hire</a>
+                <a href="running.html">Running</a>
+                <a href="dining.html">Dining</a>
+                <a href="food.html">Food &amp; Drink</a>
+                <a href="etiquette.html">Etiquette</a>
+                <a href="phrases.html">Phrases</a>
+                <a href="packing.html">Packing</a>
+                <a href="budget.html">Budget</a>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
+    <main>
+        <p>Lake Garda&rsquo;s beaches are mostly <strong>pebble or grass</strong>, not sand &mdash; lovely,
+            clean and swimmable, but <strong>pack water shoes</strong> for everyone (it&rsquo;s on the
+            <a href="packing.html">packing list</a>). Here are the best family spots within easy reach of
+            Del Garda Village, plus how lake swimming works with children.</p>
+
+        <h2>Right by the Resort</h2>
+        <ul>
+            <li><strong>Resort promenade:</strong> the village sits on the shore with steps down to the
+                water &mdash; handy for a quick dip, but there&rsquo;s <strong>no sandy beach at the site
+                itself</strong> (see <a href="resort.html">Resort</a>).</li>
+            <li><strong>Lido ai Pioppi</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Lido+ai+Pioppi+Peschiera+del+Garda" target="_blank">Map</a>
+                &mdash; pebble beach with a beach bar and pedaloes, ~8-min walk.</li>
+            <li><strong>Pebble beach (~6-min walk):</strong> small, with pedaloes to rent &mdash; an easy
+                first paddle.</li>
+        </ul>
+
+        <h2>Best Family Beaches a Short Hop Away</h2>
+        <table>
+            <thead><tr><th>Beach</th><th>Where</th><th>Why for families</th></tr></thead>
+            <tbody>
+                <tr>
+                    <td><strong>Lido di Pacengo</strong>
+                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Lido+di+Pacengo+Lazise" target="_blank">Map</a></td>
+                    <td>Pacengo, ~3 km north</td>
+                    <td>Big grassy/pebble lido, gentle entry, bar, pedaloes &mdash; lots of room</td>
+                </tr>
+                <tr>
+                    <td><strong>Spiaggia di Lazise</strong>
+                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=spiaggia+Lazise+lago+di+Garda" target="_blank">Map</a></td>
+                    <td>Lazise, ~7 km</td>
+                    <td>Pretty town beaches; combine with a wander round the walls</td>
+                </tr>
+                <tr>
+                    <td><strong>Lido di Bardolino</strong>
+                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Lido+Bardolino+lago+di+Garda" target="_blank">Map</a></td>
+                    <td>Bardolino, ~13 km</td>
+                    <td>Long lakefront with grassy areas and shade</td>
+                </tr>
+                <tr>
+                    <td><strong>Jamaica Beach</strong>
+                        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jamaica+Beach+Sirmione" target="_blank">Map</a></td>
+                    <td>Sirmione tip</td>
+                    <td>Famous flat-rock shallows &mdash; magical, but busy; water shoes a must</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Free Beach or Paid Lido?</h2>
+        <ul>
+            <li><strong>Free (<em>spiaggia libera</em>):</strong> most lake beaches are free to walk onto &mdash;
+                bring your own towels/shade.</li>
+            <li><strong>Paid lido:</strong> some beach clubs charge for sun-loungers, parasols and a
+                cleaner, serviced area with a bar and (sometimes) a pool &mdash; nice for a planned beach day.</li>
+        </ul>
+
+        <h2>Lake Swimming with Kids</h2>
+        <ul>
+            <li><strong>Water shoes for everyone</strong> &mdash; the pebbles are hard on bare feet.</li>
+            <li><strong>It shelves quickly</strong> in places and there are usually <strong>no lifeguards</strong> &mdash;
+                keep the twins in arm-bands and stay close.</li>
+            <li><strong>Morning is calmest;</strong> the afternoon breeze (and the odd storm) can push up little
+                waves &mdash; fine for paddling, but watch the youngest.</li>
+            <li><strong>Bring:</strong> a UV pop-up/sun shade, plenty of water, and a dry bag for phones
+                (all on the <a href="packing.html">packing list</a>).</li>
+            <li><strong>Prefer the pool?</strong> The resort has two pool complexes with a shallow kids&rsquo;
+                lagoon &mdash; often the easiest win on a busy beach day (see <a href="resort.html">Resort</a>).</li>
+        </ul>
+
+        <p style="margin-top:28px"><em>Beach facilities and any lido charges vary season to season &mdash;
+            confirm locally.</em></p>
+    </main>
+    <footer>
+        <p>Summer 2026 Trip to Lake Garda</p>
+    </footer>
+</body>
+</html>

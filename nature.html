@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Garda Itinerary - Nature &amp; Parks</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    <header class="site-header header-nature">
+        <h1>Nature &amp; Parks</h1>
+    </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="itinerary.html">Itinerary</a>
+                <a href="booking.html">Booking</a>
+                <a href="logistics.html">Logistics</a>
+                <a href="essentials.html">Essentials</a>
+                <a href="resort.html">Resort</a>
+                <a href="activities.html">Activities</a>
+                <a href="gardaland.html">Gardaland</a>
+                <a href="canevaworld.html">CanevaWorld</a>
+                <a href="boats.html">Boat Hire</a>
+                <a href="daytrips.html">Day Trips</a>
+                <a href="towns.html">Towns</a>
+                <a href="nature.html" class="active">Nature &amp; Parks</a>
+                <a href="beaches.html">Beaches</a>
+                <a href="markets.html">Markets</a>
+                <a href="bikes.html">Bike Hire</a>
+                <a href="running.html">Running</a>
+                <a href="dining.html">Dining</a>
+                <a href="food.html">Food &amp; Drink</a>
+                <a href="etiquette.html">Etiquette</a>
+                <a href="phrases.html">Phrases</a>
+                <a href="packing.html">Packing</a>
+                <a href="budget.html">Budget</a>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
+    <main>
+        <p>A change of pace from theme parks and pools: a safari park, one of Italy&rsquo;s most
+            beautiful gardens, and a storybook medieval village on the river &mdash; all within a
+            short drive (or, for the village, a bike ride) of the resort. Great for a calmer family day.</p>
+
+        <h2>At a Glance</h2>
+        <table>
+            <thead><tr><th>Place</th><th>What</th><th>From the resort</th><th>Best for</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Parco Natura Viva</strong></td><td>Safari &amp; zoo</td><td>~20 min drive</td><td>Animal-mad kids</td></tr>
+                <tr><td><strong>Sigurt&agrave; Garden Park</strong></td><td>Vast gardens</td><td>~25 min drive</td><td>Space to roam, golf-cart fun</td></tr>
+                <tr><td><strong>Borghetto / Valeggio</strong></td><td>Riverside village</td><td>~25 min drive / cycle</td><td>Pretty lunch, tortellini</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Parco Natura Viva</h2>
+        <p><strong>Parco Natura Viva</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Parco+Natura+Viva+Bussolengo" target="_blank">Map</a>
+            (Bussolengo) is a wildlife park in two halves: a <strong>drive-through safari</strong>
+            (lions, giraffes, rhinos &mdash; seen from your car) and a <strong>walk-through zoo</strong>
+            with a dinosaur trail the kids love.</p>
+        <ul>
+            <li><strong>Plan:</strong> half to a full day. Do the safari early when animals are active.</li>
+            <li><strong>Without a car:</strong> the drive-through needs a vehicle &mdash; ask the park about
+                its safari shuttle/bus option if you&rsquo;re car-free. <em>(Confirm before going.)</em></li>
+            <li><strong>Bring:</strong> sun protection, water and a picnic (there are cafe/picnic areas).</li>
+            <li><strong>Tickets/hours:</strong> book online; <em>prices and opening days to be verified on the park site.</em></li>
+        </ul>
+
+        <h2>Parco Giardino Sigurt&agrave;</h2>
+        <p><strong>Sigurt&agrave; Garden Park</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Parco+Giardino+Sigurta+Valeggio+sul+Mincio" target="_blank">Map</a>
+            (Valeggio sul Mincio) is a huge, beautifully landscaped garden &mdash; lawns, lakes, a maze and
+            seasonal flower displays. Summer brings the water-lily ponds and roses.</p>
+        <ul>
+            <li><strong>Get around in style:</strong> rent a <strong>golf cart</strong> or hop on the
+                little road-train &mdash; a winner with children across the big site.</li>
+            <li><strong>Kids&rsquo; bits:</strong> a hedge maze, a tortoise/petting area and lots of room to run.</li>
+            <li><strong>Plan:</strong> a relaxed half-day; go in the morning before the heat peaks.</li>
+            <li><strong>Tickets/hours:</strong> <em>verify on the park site &mdash; it&rsquo;s open daily in summer.</em></li>
+        </ul>
+
+        <h2>Borghetto sul Mincio &amp; Valeggio</h2>
+        <p><strong>Borghetto sul Mincio</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Borghetto+sul+Mincio+Valeggio" target="_blank">Map</a>
+            is a tiny medieval village of watermills strung along the river &mdash; one of the prettiest
+            corners near the lake, and the home of <strong>tortellini di Valeggio</strong> (&ldquo;love knots&rdquo;,
+            see <a href="food.html">Food &amp; Drink</a>).</p>
+        <ul>
+            <li><strong>By bike:</strong> it&rsquo;s the classic destination on the flat, traffic-free
+                <strong>Mincio cycle path</strong> from Peschiera &mdash; the route and timings are on the
+                <a href="bikes.html">Bike Hire page</a>. Stop for lunch, then roll back.</li>
+            <li><strong>By car:</strong> ~25 min; combine with Sigurt&agrave; (they&rsquo;re side by side).</li>
+            <li><strong>Don&rsquo;t miss:</strong> the views from the Visconti bridge and a riverside lunch.</li>
+        </ul>
+
+        <h2>Closer to Home</h2>
+        <ul>
+            <li><strong>SEA LIFE Aquarium</strong> sits next to <a href="gardaland.html">Gardaland</a>
+                (separate or combo ticket) &mdash; a good indoor option on a hot or stormy afternoon.</li>
+            <li><strong>The Mincio river path &amp; lake promenade</strong> are nature on the doorstep &mdash;
+                great for an easy family cycle or a <a href="running.html">morning run</a>.</li>
+        </ul>
+
+        <p style="margin-top:28px"><em>Opening days, transport options and prices flagged for
+            <strong>verification</strong> &mdash; check each park&rsquo;s website close to your visit.</em></p>
+    </main>
+    <footer>
+        <p>Summer 2026 Trip to Lake Garda</p>
+    </footer>
+</body>
+</html>
