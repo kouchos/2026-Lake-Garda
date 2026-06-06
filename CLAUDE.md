@@ -61,14 +61,19 @@ against the "simple, GitHub-Pages-hostable" goal.
 
 ### Editing the website
 - **Navigation must stay in sync.** Every page repeats the same `<nav id="site-nav">`
-  block linking all 23 pages (Home, Itinerary, Booking, Logistics, Essentials,
-  Resort, Activities, Gardaland, CanevaWorld, Boat Hire, Day Trips, Towns,
-  Nature & Parks, Beaches, Markets, Bike Hire, Running, Dining, Food & Drink,
-  Etiquette, Phrases, Packing, Budget). When you **add, remove, or rename a page,
-  update the `<nav>` in every other HTML file** — there is no shared template or
-  include. The nav block is identical across all pages except for the single
-  `class="active"` link, so the easiest safe way to re-sync after a change is a
-  small find/replace script over every `*.html` file.
+  block linking all 23 pages. The links are organised into four labelled
+  `<div class="nav-group">` clusters (each led by a `<span class="nav-group-label">`):
+  **Plan** (Home, Itinerary, Booking, Logistics, Essentials, Packing, Budget),
+  **Resort & Active** (Resort, Beaches, Bike Hire, Running),
+  **Days Out** (Activities, Gardaland, CanevaWorld, Boat Hire, Day Trips, Towns,
+  Nature & Parks, Markets), and
+  **Food & Culture** (Dining, Food & Drink, Etiquette, Phrases). On desktop the
+  groups show as separated pill clusters; in the mobile drawer each label becomes
+  a section heading. When you **add, remove, or rename a page, update the `<nav>`
+  in every other HTML file** — there is no shared template or include. The nav
+  block is identical across all pages except for the single `class="active"` link,
+  so the easiest safe way to re-sync (or to re-group) after a change is a small
+  find/replace script over every `*.html` file.
 - **Page skeleton:** each page is a full HTML document with `<head>` linking
   `style.css` (plus the inline no-flash theme script and `theme.js`), a
   `<header class="site-header header-NAME">` (the header background is a **CSS
