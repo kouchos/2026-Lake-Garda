@@ -78,6 +78,36 @@
     }
 })();
 
+/* Trip countdown — fills any [data-countdown] element (home page hero chip).
+   Dates are local to the device; close enough for a countdown chip. */
+(function () {
+    'use strict';
+
+    function initCountdown() {
+        var el = document.querySelector('[data-countdown]');
+        if (!el) {
+            return;
+        }
+        var departure = new Date(2026, 5, 27);   // Sat 27 June 2026
+        var home = new Date(2026, 6, 8);         // morning after return
+        var now = new Date();
+        if (now >= departure && now < home) {
+            el.textContent = '🏖️ We’re here!';
+        } else if (now < departure) {
+            var days = Math.ceil((departure - now) / 86400000);
+            el.textContent = '⏳ ' + days + (days === 1 ? ' day' : ' days') + ' to go';
+        } else {
+            el.textContent = '🇮🇹 Arrivederci, Garda!';
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCountdown);
+    } else {
+        initCountdown();
+    }
+})();
+
 /* Mobile side-menu (off-canvas drawer) toggle. Shared across all pages. */
 (function () {
     'use strict';
