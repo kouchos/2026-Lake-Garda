@@ -367,6 +367,44 @@ body.nav-open .nav-toggle-icon::after  { transform: translateY(-6px) rotate(-45d
     backdrop-filter: blur(2px);
 }
 
+/* Install-app button (injected by pwa.js only when installable) */
+.install-btn {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 15px;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-strong), var(--primary-color));
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--primary-color) 40%, transparent);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-theme="dark"] .install-btn {
+    color: #0c141d;
+}
+
+.install-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 14px color-mix(in srgb, var(--primary-color) 50%, transparent);
+}
+
+.install-btn:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* When the install button is present it carries the auto margin instead. */
+.install-btn + .theme-toggle {
+    margin-left: 0;
+}
+
 /* Theme toggle button */
 .theme-toggle {
     margin-left: auto;

@@ -36,6 +36,14 @@ against the "simple, GitHub-Pages-hostable" goal.
   `phrases.html`, `packing.html`, `budget.html`.
 - `style.css` — the single shared stylesheet for every page.
 - `theme.js` — shared light/dark toggle + mobile nav drawer behaviour.
+- PWA layer (the site is an installable progressive web app):
+  `manifest.json` (app metadata), `sw.js` (offline service worker that
+  precaches every page — **bump its `CACHE_VERSION` whenever site content
+  changes**, or installed apps keep serving stale pages), `pwa.js` (service
+  worker registration + nav "Install app" button, injected only when the
+  browser reports the app as installable), and `icons/` (app icons; `icon.svg`
+  is the source, PNGs are rendered from it). **When you add or remove a page,
+  also update the `PRECACHE` list in `sw.js`.**
 - `CLAUDE.md` — this file (stays at root).
 
 ### Archive (reference only — not maintained)

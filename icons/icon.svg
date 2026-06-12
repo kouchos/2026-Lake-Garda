@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Lake Garda 2026 app icon: sun over mountains and water,
+       matching the site's hero design language. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#0a4f7e"/>
+      <stop offset="0.55" stop-color="#0a93b8"/>
+      <stop offset="1" stop-color="#45c3d3"/>
+    </linearGradient>
+    <clipPath id="rounded"><rect width="512" height="512" rx="104"/></clipPath>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <rect width="512" height="512" fill="url(#sky)"/>
+    <circle cx="368" cy="128" r="92" fill="#ffd98f" opacity="0.28"/>
+    <circle cx="368" cy="128" r="62" fill="#ffd98f"/>
+    <polygon points="0,318 86,200 158,292 236,168 318,286 394,222 512,322 512,512 0,512" fill="#06283f" opacity="0.6"/>
+    <rect y="338" width="512" height="174" fill="#0b5e84" opacity="0.9"/>
+    <g stroke="#bfeef7" stroke-width="16" stroke-linecap="round" opacity="0.85" fill="none">
+      <line x1="78" y1="390" x2="208" y2="390"/>
+      <line x1="258" y1="428" x2="408" y2="428"/>
+      <line x1="116" y1="462" x2="252" y2="462"/>
+    </g>
+  </g>
+</svg>
