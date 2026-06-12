@@ -1,58 +1,71 @@
 /* ==========================================================================
    Lake Garda 2026 — shared stylesheet
-   Modern, clean, mobile-first. Light + dark themes via CSS custom properties.
-   Theme is selected with the [data-theme="dark"] attribute on <html>
+   "Lakeside editorial" design language: layered CSS-only hero scenery
+   (sun glow + mountain ridge + water sheen), Fraunces display serif for
+   headings, Inter for UI/body. Light + dark themes via CSS custom
+   properties, selected with [data-theme="dark"] on <html>
    (set by theme.js / the inline no-flash script in each page's <head>).
    ========================================================================== */
 
 /* ---- Design tokens : light (default) ---------------------------------- */
 :root {
     /* Brand */
-    --primary-color: #0077be;        /* lake blue */
-    --primary-strong: #005f99;
-    --secondary-color: #f5a623;      /* warm sun */
+    --primary-color: #0b76b8;        /* lake blue */
+    --primary-strong: #085a8f;
+    --secondary-color: #f09f1f;      /* warm sun */
+    --accent-warm: #e2654a;          /* terracotta rooftops */
 
     /* Surfaces & text */
-    --background-color: #eef2f6;
+    --background-color: #edf2f7;
     --surface: #ffffff;
-    --surface-2: #f6f8fb;
-    --text-color: #1f2933;
-    --muted-text: #56616c;
+    --surface-2: #f4f7fa;
+    --text-color: #1d2832;
+    --muted-text: #54616d;
     --light-text: #ffffff;
-    --border-color: #e2e8f0;
+    --border-color: #dfe7ee;
 
     /* Effects */
     --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-    --shadow-md: 0 6px 18px rgba(15, 23, 42, 0.08);
-    --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.12);
+    --shadow-md: 0 8px 22px rgba(15, 23, 42, 0.09);
+    --shadow-lg: 0 22px 48px rgba(13, 35, 57, 0.13);
     --overlay: rgba(8, 23, 38, 0.45);
+    --ridge-tint: rgba(6, 22, 38, 0.30);     /* mountain silhouette in heroes */
+    --hero-text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+
+    /* Type */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Helvetica, Arial, sans-serif;
+    --font-display: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman',
+        serif;
 
     /* Shape & rhythm */
     --radius-sm: 8px;
     --radius-md: 14px;
-    --radius-lg: 22px;
-    --header-height: 180px;
+    --radius-lg: 24px;
+    --header-height: 240px;
     --content-width: 920px;
 }
 
 /* ---- Design tokens : dark --------------------------------------------- */
 [data-theme="dark"] {
-    --primary-color: #4cb3ec;
-    --primary-strong: #7ccbf2;
+    --primary-color: #53b7ee;
+    --primary-strong: #8ed1f5;
     --secondary-color: #ffc24d;
+    --accent-warm: #ff8d70;
 
-    --background-color: #0e1620;
-    --surface: #161f2b;
-    --surface-2: #1d2836;
-    --text-color: #e6ecf3;
+    --background-color: #0c141d;
+    --surface: #141e29;
+    --surface-2: #1b2734;
+    --text-color: #e7edf4;
     --muted-text: #9fb0c0;
     --light-text: #f4f8fc;
-    --border-color: #2a3747;
+    --border-color: #283645;
 
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.45);
-    --shadow-lg: 0 20px 44px rgba(0, 0, 0, 0.55);
+    --shadow-lg: 0 22px 48px rgba(0, 0, 0, 0.55);
     --overlay: rgba(3, 9, 16, 0.62);
+    --ridge-tint: rgba(2, 8, 16, 0.42);
 }
 
 /* ---- Base ------------------------------------------------------------- */
@@ -67,9 +80,13 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-        Helvetica, Arial, sans-serif;
-    background-color: var(--background-color);
+    font-family: var(--font-body);
+    /* Soft sun (top-right) and lake (top-left) washes over the base colour
+       give the page gentle depth without any image assets. */
+    background:
+        radial-gradient(58rem 30rem at 112% -6%, rgba(240, 159, 31, 0.08), transparent 62%),
+        radial-gradient(70rem 34rem at -12% -2%, rgba(11, 118, 184, 0.09), transparent 58%),
+        var(--background-color);
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -79,10 +96,15 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* ---- Header ----------------------------------------------------------- */
-/* Headers use self-contained CSS gradients (no external images) so the site
+::selection {
+    background: color-mix(in srgb, var(--secondary-color) 45%, transparent);
+}
+
+/* ---- Header / hero ----------------------------------------------------- */
+/* Heroes are self-contained CSS scenes (no external images) so the site
    works offline and on GitHub Pages with zero broken-image risk. Each page
-   gets its own hue via a header-* modifier class. */
+   gets its own sky via a header-* modifier class; the sun glow and mountain
+   ridge are painted with pseudo-elements. */
 .site-header {
     color: #fff;
     min-height: var(--header-height);
@@ -93,53 +115,124 @@ body {
     background: linear-gradient(135deg, var(--primary-strong) 0%, var(--primary-color) 100%);
 }
 
-/* Soft decorative glow + a darker base at the bottom so the title stays legible. */
+/* Sun glow (warm, top right) + cool sheen (top left) + a darker base at the
+   bottom so the title stays legible over the ridge. */
 .site-header::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(120% 80% at 85% 0%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 55%),
-        linear-gradient(180deg, rgba(8, 23, 38, 0) 35%, rgba(8, 23, 38, 0.38) 100%);
+        radial-gradient(46% 60% at 84% 8%, rgba(255, 219, 153, 0.42) 0%, rgba(255, 219, 153, 0) 70%),
+        radial-gradient(120% 80% at 10% 0%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 55%),
+        linear-gradient(180deg, rgba(8, 23, 38, 0) 38%, rgba(8, 23, 38, 0.42) 100%);
+}
+
+/* Mountain ridge silhouette along the bottom of every hero. */
+.site-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 46%;
+    background: linear-gradient(180deg,
+        color-mix(in srgb, var(--ridge-tint) 70%, transparent) 0%,
+        var(--ridge-tint) 100%);
+    clip-path: polygon(
+        0 62%, 7% 40%, 14% 56%, 23% 26%, 32% 52%, 41% 36%, 50% 58%,
+        59% 24%, 68% 50%, 77% 34%, 86% 56%, 94% 42%, 100% 52%,
+        100% 100%, 0 100%);
+    pointer-events: none;
+}
+
+.header-inner {
+    position: relative;
+    z-index: 1;
+    margin: auto auto 0;
+    padding: 30px 24px 26px;
+    max-width: var(--content-width);
+    width: 100%;
+}
+
+.header-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: var(--hero-text-shadow);
+}
+
+.header-eyebrow::before {
+    content: '';
+    width: 34px;
+    height: 2px;
+    flex: 0 0 auto;
+    background: var(--secondary-color);
+    border-radius: 2px;
 }
 
 .site-header h1 {
-    position: relative;
-    margin: auto auto 0;
-    padding: 26px 24px 22px;
-    max-width: var(--content-width);
-    width: 100%;
-    font-size: clamp(1.7rem, 4.5vw, 2.6rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5.2vw, 3.1rem);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    text-shadow: var(--hero-text-shadow);
 }
 
-/* ---- Per-page header gradients --------------------------------------- */
-.header-home        { background: linear-gradient(135deg, #0a5a8c 0%, #0aa5c9 55%, #4fc3d6 100%); }
-.header-booking     { background: linear-gradient(135deg, #2b4a8c 0%, #3f6fd1 100%); }
-.header-logistics   { background: linear-gradient(135deg, #355063 0%, #0f7d8a 100%); }
-.header-resort      { background: linear-gradient(135deg, #0a7d6e 0%, #1bb39a 100%); }
-.header-activities  { background: linear-gradient(135deg, #c2410c 0%, #f59e0b 100%); }
-.header-gardaland   { background: linear-gradient(135deg, #5b21b6 0%, #c026d3 100%); }
-.header-caneva      { background: linear-gradient(135deg, #0369a1 0%, #06b6d4 100%); }
-.header-boats       { background: linear-gradient(135deg, #075985 0%, #0ea5e9 100%); }
-.header-daytrips    { background: linear-gradient(135deg, #9a3412 0%, #d97706 60%, #e9b949 100%); }
-.header-bikes       { background: linear-gradient(135deg, #166534 0%, #65a30d 100%); }
-.header-running     { background: linear-gradient(135deg, #047857 0%, #14b8a6 60%, #5eead4 100%); }
-.header-dining      { background: linear-gradient(135deg, #b91c1c 0%, #ea580c 100%); }
-.header-food        { background: linear-gradient(135deg, #be185d 0%, #f97316 100%); }
-.header-etiquette   { background: linear-gradient(135deg, #6d4c2f 0%, #b08247 100%); }
-.header-packing     { background: linear-gradient(135deg, #4338ca 0%, #7c3aed 100%); }
-.header-budget      { background: linear-gradient(135deg, #166534 0%, #ca8a04 100%); }
-.header-itinerary   { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #38bdf8 100%); }
-.header-essentials  { background: linear-gradient(135deg, #991b1b 0%, #dc2626 100%); }
-.header-towns       { background: linear-gradient(135deg, #155e75 0%, #0d9488 100%); }
-.header-nature      { background: linear-gradient(135deg, #15803d 0%, #4d7c0f 60%, #a3b833 100%); }
-.header-beaches     { background: linear-gradient(135deg, #0e7490 0%, #22d3ee 60%, #fcd34d 100%); }
-.header-markets     { background: linear-gradient(135deg, #b45309 0%, #ea580c 60%, #f59e0b 100%); }
-.header-phrases     { background: linear-gradient(135deg, #4c1d95 0%, #7c3aed 60%, #a78bfa 100%); }
+/* Fact chips in the hero (home page). */
+.hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-facts li {
+    padding: 5px 13px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* ---- Per-page hero skies ---------------------------------------------- */
+.header-home        { background: linear-gradient(150deg, #0a4f7e 0%, #0a93b8 52%, #45c3d3 100%); }
+.header-booking     { background: linear-gradient(150deg, #243f86 0%, #3f6fd1 60%, #6fa3e8 100%); }
+.header-logistics   { background: linear-gradient(150deg, #2d4759 0%, #0f7d8a 60%, #2fb3b0 100%); }
+.header-resort      { background: linear-gradient(150deg, #075e54 0%, #0fa68c 55%, #46cfae 100%); }
+.header-activities  { background: linear-gradient(150deg, #a33508 0%, #e07b0c 55%, #f5b942 100%); }
+.header-gardaland   { background: linear-gradient(150deg, #4c1d95 0%, #9333ea 55%, #d946ef 100%); }
+.header-caneva      { background: linear-gradient(150deg, #035688 0%, #0891b2 55%, #22d3ee 100%); }
+.header-boats       { background: linear-gradient(150deg, #064a73 0%, #0284c7 55%, #38bdf8 100%); }
+.header-daytrips    { background: linear-gradient(150deg, #832c0f 0%, #c2680a 55%, #e9b949 100%); }
+.header-bikes       { background: linear-gradient(150deg, #14532d 0%, #4d9a0b 60%, #a3cc2e 100%); }
+.header-running     { background: linear-gradient(150deg, #065f46 0%, #0d9488 55%, #4fd8c4 100%); }
+.header-dining      { background: linear-gradient(150deg, #991b1b 0%, #dc4d12 60%, #f08c3a 100%); }
+.header-food        { background: linear-gradient(150deg, #9d174d 0%, #e0542e 60%, #f59e0b 100%); }
+.header-etiquette   { background: linear-gradient(150deg, #5c3d1f 0%, #a3793e 60%, #d2a960 100%); }
+.header-packing     { background: linear-gradient(150deg, #3730a3 0%, #6d28d9 60%, #a855f7 100%); }
+.header-budget      { background: linear-gradient(150deg, #14532d 0%, #54820e 55%, #d9a40a 100%); }
+.header-itinerary   { background: linear-gradient(150deg, #1e3a8a 0%, #2563eb 55%, #38bdf8 100%); }
+.header-essentials  { background: linear-gradient(150deg, #7f1d1d 0%, #dc2626 60%, #f4734f 100%); }
+.header-towns       { background: linear-gradient(150deg, #124e63 0%, #0d9488 60%, #41c6ad 100%); }
+.header-nature      { background: linear-gradient(150deg, #14532d 0%, #3f6212 55%, #a3b833 100%); }
+.header-beaches     { background: linear-gradient(150deg, #0c5e78 0%, #0fb5cf 55%, #fcd34d 100%); }
+.header-markets     { background: linear-gradient(150deg, #92400e 0%, #d97706 55%, #fbbf24 100%); }
+.header-phrases     { background: linear-gradient(150deg, #4c1d95 0%, #7c3aed 55%, #a78bfa 100%); }
 
 /* ---- Navigation (desktop pill bar) ----------------------------------- */
 nav {
@@ -152,9 +245,9 @@ nav {
     justify-content: center;
     gap: 6px;
     padding: 10px 16px;
-    background-color: color-mix(in srgb, var(--surface) 82%, transparent);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
-    backdrop-filter: saturate(180%) blur(12px);
+    background-color: color-mix(in srgb, var(--surface) 80%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    backdrop-filter: saturate(180%) blur(14px);
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
 }
@@ -188,7 +281,7 @@ nav {
     font-size: 0.68rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.09em;
     color: var(--muted-text);
     padding: 0 2px;
     white-space: nowrap;
@@ -212,8 +305,13 @@ nav a:hover {
 }
 
 nav a.active {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-strong), var(--primary-color));
     color: #fff;
+    box-shadow: 0 3px 10px color-mix(in srgb, var(--primary-color) 40%, transparent);
+}
+
+[data-theme="dark"] nav a.active {
+    color: #0c141d;
 }
 
 /* ---- Hamburger toggle (hidden on desktop) ----------------------------- */
@@ -307,10 +405,10 @@ body.nav-open .nav-toggle-icon::after  { transform: translateY(-6px) rotate(-45d
 /* ---- Main / cards ----------------------------------------------------- */
 main {
     max-width: var(--content-width);
-    margin: 28px auto 48px;
+    margin: 30px auto 56px;
     position: relative;
     z-index: 1;
-    padding: 32px 36px;
+    padding: 36px 40px;
     background: var(--surface);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
@@ -324,12 +422,15 @@ main > p:first-of-type {
 
 /* ---- Typography ------------------------------------------------------- */
 h2 {
-    color: var(--primary-color);
-    font-weight: 700;
+    font-family: var(--font-display);
+    color: var(--primary-strong);
+    font-size: 1.65rem;
+    font-weight: 600;
     letter-spacing: -0.01em;
+    line-height: 1.2;
     padding-bottom: 10px;
-    margin-top: 42px;
-    border-bottom: 2px solid var(--border-color);
+    margin-top: 46px;
+    border-bottom: 1px solid var(--border-color);
 }
 
 h2::after {
@@ -337,15 +438,18 @@ h2::after {
     content: '';
     display: block;
     width: 64px;
-    height: 2px;
+    height: 3px;
     margin-bottom: -12px;
-    background: var(--secondary-color);
+    border-radius: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-warm));
 }
 
 h3 {
+    font-family: var(--font-display);
     color: var(--primary-strong);
-    font-weight: 700;
-    margin-top: 28px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 30px;
 }
 
 h4 {
@@ -379,6 +483,13 @@ a:hover {
     text-decoration: underline;
 }
 
+a:focus-visible,
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
 /* ---- Tables ----------------------------------------------------------- */
 table {
     width: 100%;
@@ -400,10 +511,13 @@ td {
 }
 
 thead th {
-    background-color: var(--primary-color);
-    color: #fff;
-    font-weight: 600;
-    letter-spacing: 0.01em;
+    background: color-mix(in srgb, var(--primary-color) 10%, var(--surface));
+    color: var(--primary-strong);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    border-bottom: 2px solid color-mix(in srgb, var(--primary-color) 35%, var(--border-color));
 }
 
 tbody tr:nth-child(even) {
@@ -431,6 +545,7 @@ tbody tr:hover {
     font-size: 0.85em;
     font-weight: 600;
     white-space: nowrap;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .map-link::before {
@@ -440,13 +555,58 @@ tbody tr:hover {
 
 .map-link:hover {
     background-color: color-mix(in srgb, var(--primary-color) 20%, var(--surface));
+    box-shadow: var(--shadow-sm);
     text-decoration: none;
+}
+
+/* ---- Explore tiles (home page directory) ------------------------------ */
+.tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+    gap: 12px;
+    margin: 18px 0 10px;
+}
+
+a.tile {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 15px 15px 13px;
+    background: var(--surface-2);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+a.tile:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: color-mix(in srgb, var(--primary-color) 45%, var(--border-color));
+    text-decoration: none;
+}
+
+.tile-emoji {
+    font-size: 1.45rem;
+    line-height: 1.3;
+}
+
+.tile-name {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.tile-desc {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--muted-text);
 }
 
 /* ---- Footer ----------------------------------------------------------- */
 footer {
     text-align: center;
-    padding: 28px 20px;
+    padding: 30px 20px 34px;
     margin-top: 48px;
     color: var(--muted-text);
     background-color: var(--surface);
@@ -458,10 +618,27 @@ footer p {
     color: var(--muted-text);
 }
 
+footer p::before {
+    /* small sun-over-water motif */
+    content: '☀️ 🌊';
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    letter-spacing: 0.3em;
+}
+
 /* ---- Mobile ----------------------------------------------------------- */
 @media (max-width: 640px) {
     :root {
-        --header-height: 150px;
+        --header-height: 200px;
+    }
+
+    .header-inner {
+        padding: 22px 18px 20px;
+    }
+
+    .header-eyebrow {
+        font-size: 0.7rem;
     }
 
     /* The nav becomes a slim sticky bar: hamburger (left) + theme toggle (right). */
@@ -519,10 +696,6 @@ footer p {
     }
 
     /* In the drawer, stack each group with its label as a section heading. */
-    .nav-links {
-        gap: 4px;
-    }
-
     .nav-group {
         flex-direction: column;
         align-items: stretch;
@@ -552,13 +725,14 @@ footer p {
     }
 
     main {
-        margin: 18px 12px 28px;
-        padding: 22px 18px;
+        margin: 16px 12px 28px;
+        padding: 24px 18px;
         border-radius: var(--radius-md);
     }
 
-    .site-header h1 {
-        padding: 18px 16px 16px;
+    .tile-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
     }
 
     /* Let wide tables scroll horizontally without breaking the layout */

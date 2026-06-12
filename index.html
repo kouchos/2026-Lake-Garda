@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lake Garda Itinerary - Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
     <script>
         (function () {
             try {
@@ -20,7 +23,17 @@
 </head>
 <body>
     <header class="site-header header-home">
-        <h1>Confirmed Holiday Itinerary: Summer 2026</h1>
+        <div class="header-inner">
+            <p class="header-eyebrow">Del Garda Village · Peschiera del Garda</p>
+            <h1>Lake Garda, Summer 2026</h1>
+            <ul class="hero-facts">
+                <li>📅 Sat 27 June – Tue 7 July 2026</li>
+                <li>🛏️ 10 nights</li>
+                <li>👨‍👩‍👧‍👧 2 adults · 3 kids</li>
+                <li>✈️ Flights booked</li>
+                <li data-countdown>⏳ Counting down…</li>
+            </ul>
+        </div>
     </header>
     <nav id="site-nav">
         <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
@@ -117,6 +130,47 @@
                 </tr>
             </tbody>
         </table>
+
+        <h2>🧭 Explore the Plan</h2>
+        <p>Everything for the trip, one tap away.</p>
+
+        <h3>Plan</h3>
+        <div class="tile-grid">
+            <a class="tile" href="itinerary.html"><span class="tile-emoji">🗓️</span><span class="tile-name">Itinerary</span><span class="tile-desc">Day-by-day plan for all 10 nights</span></a>
+            <a class="tile" href="booking.html"><span class="tile-emoji">🏕️</span><span class="tile-name">Booking</span><span class="tile-desc">Mobile home &amp; booking details</span></a>
+            <a class="tile" href="logistics.html"><span class="tile-emoji">✈️</span><span class="tile-name">Logistics</span><span class="tile-desc">Flights, transfers &amp; getting there</span></a>
+            <a class="tile" href="essentials.html"><span class="tile-emoji">🧾</span><span class="tile-name">Essentials</span><span class="tile-desc">Documents, health &amp; must-knows</span></a>
+            <a class="tile" href="packing.html"><span class="tile-emoji">🎒</span><span class="tile-name">Packing</span><span class="tile-desc">What to bring for the five of us</span></a>
+            <a class="tile" href="budget.html"><span class="tile-emoji">💶</span><span class="tile-name">Budget</span><span class="tile-desc">Costs &amp; spending plan</span></a>
+        </div>
+
+        <h3>Resort &amp; Active</h3>
+        <div class="tile-grid">
+            <a class="tile" href="resort.html"><span class="tile-emoji">🏊</span><span class="tile-name">Resort</span><span class="tile-desc">Del Garda Village pools &amp; facilities</span></a>
+            <a class="tile" href="beaches.html"><span class="tile-emoji">🏖️</span><span class="tile-name">Beaches</span><span class="tile-desc">Lakeside swims near Peschiera</span></a>
+            <a class="tile" href="bikes.html"><span class="tile-emoji">🚲</span><span class="tile-name">Bike Hire</span><span class="tile-desc">Rentals &amp; family-friendly routes</span></a>
+            <a class="tile" href="running.html"><span class="tile-emoji">🏃</span><span class="tile-name">Running</span><span class="tile-desc">Routes from the resort</span></a>
+        </div>
+
+        <h3>Days Out</h3>
+        <div class="tile-grid">
+            <a class="tile" href="activities.html"><span class="tile-emoji">🎯</span><span class="tile-name">Activities</span><span class="tile-desc">The big list of things to do</span></a>
+            <a class="tile" href="gardaland.html"><span class="tile-emoji">🎢</span><span class="tile-name">Gardaland</span><span class="tile-desc">Italy's biggest theme park</span></a>
+            <a class="tile" href="canevaworld.html"><span class="tile-emoji">💦</span><span class="tile-name">CanevaWorld</span><span class="tile-desc">Waterpark &amp; movie studios</span></a>
+            <a class="tile" href="boats.html"><span class="tile-emoji">🛥️</span><span class="tile-name">Boat Hire</span><span class="tile-desc">Self-drive boats on the lake</span></a>
+            <a class="tile" href="daytrips.html"><span class="tile-emoji">🚆</span><span class="tile-name">Day Trips</span><span class="tile-desc">Verona, Venice &amp; beyond</span></a>
+            <a class="tile" href="towns.html"><span class="tile-emoji">🏘️</span><span class="tile-name">Towns</span><span class="tile-desc">Lazise, Sirmione &amp; the lakeside</span></a>
+            <a class="tile" href="nature.html"><span class="tile-emoji">🦜</span><span class="tile-name">Nature &amp; Parks</span><span class="tile-desc">Wildlife &amp; green days out</span></a>
+            <a class="tile" href="markets.html"><span class="tile-emoji">🧺</span><span class="tile-name">Markets</span><span class="tile-desc">Weekly market calendar</span></a>
+        </div>
+
+        <h3>Food &amp; Culture</h3>
+        <div class="tile-grid">
+            <a class="tile" href="dining.html"><span class="tile-emoji">🍕</span><span class="tile-name">Dining</span><span class="tile-desc">Eating out with the kids</span></a>
+            <a class="tile" href="food.html"><span class="tile-emoji">🍝</span><span class="tile-name">Food &amp; Drink</span><span class="tile-desc">What to eat around Garda</span></a>
+            <a class="tile" href="etiquette.html"><span class="tile-emoji">🤌</span><span class="tile-name">Etiquette</span><span class="tile-desc">Italian dos and don'ts</span></a>
+            <a class="tile" href="phrases.html"><span class="tile-emoji">🇮🇹</span><span class="tile-name">Phrases</span><span class="tile-desc">Holiday Italian cheat sheet</span></a>
+        </div>
     </main>
     <footer>
         <p>Summer 2026 Trip to Lake Garda</p>
