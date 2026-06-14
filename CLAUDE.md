@@ -28,10 +28,10 @@ against the "simple, GitHub-Pages-hostable" goal.
 ### Active site (root — this is what you edit)
 - `index.html` — home page (overview + key dates table). **This is the GitHub
   Pages landing page.**
-- Section pages (23 pages total, all sharing the nav): `itinerary.html`,
+- Section pages (24 pages total, all sharing the nav): `itinerary.html`,
   `booking.html`, `logistics.html`, `essentials.html`, `resort.html`,
   `activities.html`, `gardaland.html`, `canevaworld.html`, `boats.html`,
-  `daytrips.html`, `towns.html`, `nature.html`, `beaches.html`, `markets.html`,
+  `daytrips.html`, `venice.html`, `towns.html`, `nature.html`, `beaches.html`, `markets.html`,
   `bikes.html`, `running.html`, `dining.html`, `food.html`, `etiquette.html`,
   `phrases.html`, `packing.html`, `budget.html`.
 - `style.css` — the single shared stylesheet for every page.
@@ -69,12 +69,12 @@ against the "simple, GitHub-Pages-hostable" goal.
 
 ### Editing the website
 - **Navigation must stay in sync.** Every page repeats the same `<nav id="site-nav">`
-  block linking all 23 pages. The links are organised into four labelled
+  block linking all 24 pages. The links are organised into four labelled
   `<div class="nav-group">` clusters (each led by a `<span class="nav-group-label">`):
   **Plan** (Home, Itinerary, Booking, Logistics, Essentials, Packing, Budget),
   **Resort & Active** (Resort, Beaches, Bike Hire, Running),
-  **Days Out** (Activities, Gardaland, CanevaWorld, Boat Hire, Day Trips, Towns,
-  Nature & Parks, Markets), and
+  **Days Out** (Activities, Gardaland, CanevaWorld, Boat Hire, Day Trips, Venice Day,
+  Towns, Nature & Parks, Markets), and
   **Food & Culture** (Dining, Food & Drink, Etiquette, Phrases). On desktop the
   groups show as separated pill clusters; in the mobile drawer each label becomes
   a section heading. When you **add, remove, or rename a page, update the `<nav>`

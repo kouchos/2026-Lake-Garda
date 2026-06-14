@@ -219,6 +219,7 @@ body {
 .header-caneva      { background: linear-gradient(150deg, #035688 0%, #0891b2 55%, #22d3ee 100%); }
 .header-boats       { background: linear-gradient(150deg, #064a73 0%, #0284c7 55%, #38bdf8 100%); }
 .header-daytrips    { background: linear-gradient(150deg, #832c0f 0%, #c2680a 55%, #e9b949 100%); }
+.header-venice      { background: linear-gradient(150deg, #3b1f6e 0%, #1d6fa5 55%, #46c2d8 100%); }
 .header-bikes       { background: linear-gradient(150deg, #14532d 0%, #4d9a0b 60%, #a3cc2e 100%); }
 .header-running     { background: linear-gradient(150deg, #065f46 0%, #0d9488 55%, #4fd8c4 100%); }
 .header-dining      { background: linear-gradient(150deg, #991b1b 0%, #dc4d12 60%, #f08c3a 100%); }
