@@ -6,7 +6,7 @@
    IMPORTANT: bump CACHE_VERSION whenever site content changes, so installed
    apps pick up the new pages on their next visit. */
 
-var CACHE_VERSION = 'garda-2026-v1';
+var CACHE_VERSION = 'garda-2026-v2';
 
 var PRECACHE = [
     './',
@@ -21,6 +21,7 @@ var PRECACHE = [
     'canevaworld.html',
     'boats.html',
     'daytrips.html',
+    'venice.html',
     'towns.html',
     'nature.html',
     'beaches.html',

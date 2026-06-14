@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Garda Itinerary - A Day in Venice Together</title>
+    <meta name="theme-color" content="#0b76b8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c141d">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <script src="theme.js" defer></script>
+    <script src="pwa.js" defer></script>
+</head>
+<body>
+    <header class="site-header header-venice">
+        <div class="header-inner">
+            <p class="header-eyebrow">Lake Garda · 27 June – 7 July 2026</p>
+            <h1>8a. A Day in Venice Together</h1>
+        </div>
+    </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <div class="nav-group">
+                <span class="nav-group-label">Plan</span>
+                    <a href="index.html">Home</a>
+                    <a href="itinerary.html">Itinerary</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="logistics.html">Logistics</a>
+                    <a href="essentials.html">Essentials</a>
+                    <a href="packing.html">Packing</a>
+                    <a href="budget.html">Budget</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-group-label">Resort &amp; Active</span>
+                    <a href="resort.html">Resort</a>
+                    <a href="beaches.html">Beaches</a>
+                    <a href="bikes.html">Bike Hire</a>
+                    <a href="running.html">Running</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-group-label">Days Out</span>
+                    <a href="activities.html">Activities</a>
+                    <a href="gardaland.html">Gardaland</a>
+                    <a href="canevaworld.html">CanevaWorld</a>
+                    <a href="boats.html">Boat Hire</a>
+                    <a href="daytrips.html">Day Trips</a>
+                    <a href="venice.html" class="active">Venice Day</a>
+                    <a href="towns.html">Towns</a>
+                    <a href="nature.html">Nature &amp; Parks</a>
+                    <a href="markets.html">Markets</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-group-label">Food &amp; Culture</span>
+                    <a href="dining.html">Dining</a>
+                    <a href="food.html">Food &amp; Drink</a>
+                    <a href="etiquette.html">Etiquette</a>
+                    <a href="phrases.html">Phrases</a>
+            </div>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
+    <main>
+        <p>A plan for <strong>two families spending a full day together in Venice</strong>. We travel
+            in from <strong>Lake Garda</strong> (by train from Peschiera); the other family comes from
+            <strong>Union Lido</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Union+Lido+Cavallino-Treporti" target="_blank">Map</a>
+            on the Cavallino coast (by ferry across the lagoon). The two routes land at
+            <em>opposite ends</em> of Venice, so the trick is picking one clear meeting point and a
+            relaxed, kid-friendly loop between them. Kids on the day are roughly <strong>7&ndash;12</strong>,
+            so this is paced for short legs, plenty of gelato stops and one booked sit-down lunch.</p>
+
+        <h2>The Two Starting Points</h2>
+        <table>
+            <thead><tr><th></th><th>Our family — from Lake Garda</th><th>Their family — from Union Lido</th></tr></thead>
+            <tbody>
+                <tr><td><strong>How</strong></td><td>Train from <strong>Peschiera del Garda</strong> to <strong>Venezia Santa Lucia</strong></td><td>Ferry from <strong>Punta Sabbioni</strong> to <strong>San Marco / San Zaccaria</strong></td></tr>
+                <tr><td><strong>Arrives at</strong></td><td>Santa Lucia station — the <em>north-west</em> end, right on the Grand Canal</td><td>San Zaccaria — the <em>south-east</em> end, by St Mark&rsquo;s</td></tr>
+                <tr><td><strong>Journey time</strong></td><td>~1h45&ndash;2h direct (or ~1h15 + change via a fast train from Verona)</td><td>~10&ndash;15&nbsp;min drive/bus to Punta Sabbioni, then ~35&nbsp;min on ACTV ferry line 14/15</td></tr>
+                <tr><td><strong>No cars in Venice</strong></td><td>Train walks straight onto the water — perfect</td><td>Park at Punta Sabbioni and take the boat; do <em>not</em> drive onto the islands</td></tr>
+            </tbody>
+        </table>
+        <p><em>Both routes are step-free-ish but boat-heavy — keep buggies to a minimum (Venice is all
+            bridges and steps). Fares and times below are flagged for <strong>verification</strong> nearer
+            the date.</em></p>
+
+        <h2>Our Route (Lake Garda → Venice)</h2>
+        <ul>
+            <li><strong>Catch an early regional train</strong> from <strong>Peschiera del Garda</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Stazione+di+Peschiera+del+Garda" target="_blank">Map</a>
+                (~2.5&nbsp;km from Del Garda Village) on the Milan&ndash;Venice line. A ~08:00 departure
+                puts you into <strong>Venezia Santa Lucia</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Venezia+Santa+Lucia+station" target="_blank">Map</a>
+                around 10:00.</li>
+            <li><strong>For speed</strong>, take a regional to <strong>Verona Porta Nuova</strong> then a
+                <em>Frecciarossa</em>/Italo on to Venice (~1h15 that leg) — book ahead for the best fare.</li>
+            <li>Return regional fare is roughly <strong>&euro;24&ndash;30 pp</strong>; children 4&ndash;11
+                travel reduced (often free with an adult on regional trains), under 4 free.
+                <strong>Validate paper regional tickets</strong> before boarding.</li>
+        </ul>
+
+        <h2>Their Route (Union Lido → Venice)</h2>
+        <ul>
+            <li>From the <strong>Union Lido</strong> area it&rsquo;s a short hop (ATVO/ACTV bus or drive) to
+                <strong>Punta Sabbioni</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Punta+Sabbioni+ferry+terminal" target="_blank">Map</a>,
+                the lagoon ferry terminal at the tip of the Cavallino peninsula.</li>
+            <li>Take ACTV <strong>ferry line 14</strong> (or 15) straight across to <strong>San Zaccaria</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=San+Zaccaria+vaporetto+stop+Venice" target="_blank">Map</a>,
+                a 2-minute walk from <strong>St Mark&rsquo;s Square</strong> — about 35&nbsp;min on the water with
+                a gorgeous run past the lagoon islands.</li>
+            <li>A day vaporetto pass (~&euro;25 pp, kids reduced) covers this boat <em>and</em> any
+                Grand Canal hops during the day — worth it for both families.</li>
+        </ul>
+
+        <h2>Where to Meet</h2>
+        <p><strong>Best meeting point:</strong> the bottom of the <strong>Campanile (bell tower) in
+            Piazza San Marco</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Campanile+di+San+Marco+Venice" target="_blank">Map</a>.
+            It&rsquo;s impossible to miss, the Union Lido family arrive 2 minutes away at San Zaccaria, and
+            we reach it easily by <strong>Vaporetto Line 1 or 2</strong> down the Grand Canal from the station
+            (a 30&ndash;40&nbsp;min ride that is itself a highlight). Aim to meet at <strong>11:00</strong> —
+            forgiving enough for both journeys.</p>
+        <p><strong>Quieter back-up:</strong> if San Marco is a crush, switch the rendezvous to
+            <strong>Campo Santo Stefano</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Campo+Santo+Stefano+Venice" target="_blank">Map</a>,
+            a big open square with cafés and room for kids — 10&nbsp;min walk from San Marco, on our way in
+            from the station. Agree the fallback <em>before</em> the day, and swap phone numbers /
+            share live locations, as mobile signal can wobble between the tall buildings.</p>
+
+        <h2>A Realistic Day (the timeline)</h2>
+        <table>
+            <thead><tr><th>Time</th><th>Plan</th></tr></thead>
+            <tbody>
+                <tr><td><strong>~07:30</strong></td><td><em>Us:</em> leave the resort; <em>~08:00</em> train from Peschiera. <em>Them:</em> aim to leave Union Lido ~09:15 for the ferry.</td></tr>
+                <tr><td><strong>10:00&ndash;10:30</strong></td><td>Both families land — we walk onto the Grand Canal at Santa Lucia and hop a vaporetto; they cross from Punta Sabbioni to San Zaccaria.</td></tr>
+                <tr><td><strong>11:00</strong></td><td><strong>Meet at the Campanile, Piazza San Marco.</strong> Hugs, gelato, photo by the lagoon.</td></tr>
+                <tr><td><strong>11:15&ndash;12:30</strong></td><td><strong>St Mark&rsquo;s together:</strong> outside of the Basilica, the pigeons and arcades; let the keen ones climb the <strong>Campanile</strong> lift for the big view. Easy, all-ages.</td></tr>
+                <tr><td><strong>12:45&ndash;14:15</strong></td><td><strong>Booked lunch</strong> (see picks below) — sit-down, out of the heat, everyone refuels.</td></tr>
+                <tr><td><strong>14:30&ndash;15:15</strong></td><td><strong>Rialto stroll:</strong> wander to the <strong>Rialto Bridge</strong> and market lanes; the kids love spotting boats and the fish stalls.</td></tr>
+                <tr><td><strong>15:15&ndash;16:30</strong></td><td><strong>Get gently lost</strong> in the quieter Castello or Dorsoduro lanes — mask shops, a hidden campo, a second gelato. Optional <strong>shared gondola</strong> (~&euro;90 / 30&nbsp;min, up to 5 per boat) as the big treat.</td></tr>
+                <tr><td><strong>16:30&ndash;17:00</strong></td><td><strong>Wind down</strong> at a canal-side café/spritz-and-juice stop. Compare the day&rsquo;s favourite moments.</td></tr>
+                <tr><td><strong>~17:15</strong></td><td><strong>Goodbyes</strong> — they catch the ferry back from San Zaccaria; we take a vaporetto to the station for the train home.</td></tr>
+                <tr><td><strong>~17:45&ndash;18:30</strong></td><td>Both families on the way back. We aim for an evening regional/fast train; <strong>check the last useful return time before you set out</strong>.</td></tr>
+            </tbody>
+        </table>
+        <p><em>This is deliberately unhurried — two big sights, one long lunch, lots of pottering. With
+            7&ndash;12-year-olds, less really is more in the heat.</em></p>
+
+        <h2>Lunch — Book This in Advance</h2>
+        <p>For a group of two families (roughly 4 adults + 5 kids) you want somewhere that <strong>takes
+            bookings</strong>, has <strong>space and a kid-friendly menu</strong>, and isn&rsquo;t wedged onto a
+            tourist-trap square. Top pick first:</p>
+        <ul>
+            <li><strong>★ Birraria La Corte</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Birraria+La+Corte+Venice+Campo+San+Polo" target="_blank">Map</a>
+                &mdash; pizza, pasta and grills on the big open <strong>Campo San Polo</strong>, with outdoor
+                tables and room for kids to breathe. Takes group bookings online — the easy, reliable
+                choice for this day. ~10&nbsp;min walk from Rialto.</li>
+            <li><strong>Trattoria alla Madonna</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Trattoria+alla+Madonna+Venice" target="_blank">Map</a>
+                &mdash; a classic Venetian seafood institution near Rialto; big, bustling, good value. Phone
+                ahead to hold a table for a group (busy and cash-friendly).</li>
+            <li><strong>Rossopomodoro Venezia</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Rossopomodoro+Venezia+San+Marco" target="_blank">Map</a>
+                &mdash; dependable Neapolitan pizza chain near San Marco; bookable, fast, fuss-free and a
+                safe bet with fussy younger eaters.</li>
+        </ul>
+        <p><strong>Booking tip:</strong> reserve a week or two out for <strong>~12:45</strong>, note the
+            <em>head-count including children</em> and ask for highchairs if needed. Confirm the day before.
+            <em>Prices and booking policies flagged for verification.</em></p>
+
+        <h2>Kid-Pleasers Along the Way</h2>
+        <ul>
+            <li><strong>The boat rides are the main event</strong> — the ferry crossing and the Grand Canal
+                vaporetto beat any museum for a 7&ndash;12-year-old.</li>
+            <li><strong>Campanile lift</strong> for the bird&rsquo;s-eye view; <strong>feeding-free</strong> pigeon
+                spotting in the square.</li>
+            <li><strong>Rialto market</strong> fish and produce stalls (mornings are liveliest).</li>
+            <li><strong>Mask &amp; glass shops</strong> — pick a small Murano-glass trinket as a souvenir.</li>
+            <li><strong>Gelato count:</strong> aim for at least two. It is the law.</li>
+        </ul>
+
+        <h2>Tips &amp; Contingency</h2>
+        <ul>
+            <li><strong>Agree the meeting point and a fallback in advance</strong>, and share live locations —
+                signal is patchy among tall buildings.</li>
+            <li><strong>One vaporetto day pass each</strong> covers the lagoon ferry and all Grand Canal hops —
+                simplest for both families.</li>
+            <li><strong>Beat the heat:</strong> hats, sun cream, refillable bottles (public fountains all over);
+                keep the pace gentle and chase the shade.</li>
+            <li><strong>Comfy shoes</strong> — endless stone and stepped bridges; a buggy is awkward here.</li>
+            <li><strong>Watch the clock home:</strong> note the last good return ferry (Punta Sabbioni) and train
+                (Santa Lucia) before you set off — they differ for each family.</li>
+            <li><strong>It&rsquo;s a domestic trip</strong> — no passport needed, but keep ID and booking details handy.</li>
+        </ul>
+
+        <p style="margin-top:28px"><em>Train/ferry times, fares and restaurant policies flagged for
+            <strong>verification</strong> — check Trenitalia, ACTV/AVM and the venue sites near your travel date.
+            See also the <a href="daytrips.html">Day Trips</a> page for the wider Verona &amp; Venice overview.</em></p>
+    </main>
+    <footer>
+        <p>Summer 2026 Trip to Lake Garda</p>
+    </footer>
+</body>
+</html>
