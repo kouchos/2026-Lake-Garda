@@ -28,8 +28,8 @@ against the "simple, GitHub-Pages-hostable" goal.
 ### Active site (root — this is what you edit)
 - `index.html` — home page (overview + key dates table). **This is the GitHub
   Pages landing page.**
-- Section pages (24 pages total, all sharing the nav): `itinerary.html`,
-  `booking.html`, `logistics.html`, `essentials.html`, `resort.html`,
+- Section pages (25 pages total, all sharing the nav): `itinerary.html`,
+  `booking.html`, `logistics.html`, `transfer.html`, `essentials.html`, `resort.html`,
   `activities.html`, `gardaland.html`, `canevaworld.html`, `boats.html`,
   `daytrips.html`, `venice.html`, `towns.html`, `nature.html`, `beaches.html`, `markets.html`,
   `bikes.html`, `running.html`, `dining.html`, `food.html`, `etiquette.html`,
@@ -69,9 +69,9 @@ against the "simple, GitHub-Pages-hostable" goal.
 
 ### Editing the website
 - **Navigation must stay in sync.** Every page repeats the same `<nav id="site-nav">`
-  block linking all 24 pages. The links are organised into four labelled
+  block linking all 25 pages. The links are organised into four labelled
   `<div class="nav-group">` clusters (each led by a `<span class="nav-group-label">`):
-  **Plan** (Home, Itinerary, Booking, Logistics, Essentials, Packing, Budget),
+  **Plan** (Home, Itinerary, Booking, Logistics, Transfer, Essentials, Packing, Budget),
   **Resort & Active** (Resort, Beaches, Bike Hire, Running),
   **Days Out** (Activities, Gardaland, CanevaWorld, Boat Hire, Day Trips, Venice Day,
   Towns, Nature & Parks, Markets), and
