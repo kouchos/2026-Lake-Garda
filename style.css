@@ -234,6 +234,15 @@ body {
 .header-beaches     { background: linear-gradient(150deg, #0c5e78 0%, #0fb5cf 55%, #fcd34d 100%); }
 .header-markets     { background: linear-gradient(150deg, #92400e 0%, #d97706 55%, #fbbf24 100%); }
 .header-phrases     { background: linear-gradient(150deg, #4c1d95 0%, #7c3aed 55%, #a78bfa 100%); }
+.header-transfer    { background: linear-gradient(150deg, #155e75 0%, #0e7490 55%, #22d3ee 100%); }
+
+/* ---- Urgent callout (e.g. on-the-day helpline) ----------------------- */
+.callout-urgent {
+    padding: 12px 16px;
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--primary-color) 12%, var(--surface));
+}
 
 /* ---- Navigation (desktop pill bar) ----------------------------------- */
 nav {
