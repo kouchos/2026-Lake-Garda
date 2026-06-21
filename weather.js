@@ -22,19 +22,35 @@
     var TZ = 'Europe/Rome';
 
     var CACHE_KEY = 'garda-weather-cache-v1';
+    var NAAS_CACHE_KEY = 'garda-weather-naas-v1';
     var MAX_AGE_MS = 30 * 60 * 1000;   /* consider data "fresh" for 30 min */
 
-    var API_URL = 'https://api.open-meteo.com/v1/forecast'
-        + '?latitude=' + LAT + '&longitude=' + LON
-        + '&timezone=' + encodeURIComponent(TZ)
-        + '&forecast_days=7'
-        + '&current=temperature_2m,relative_humidity_2m,apparent_temperature,'
-        + 'is_day,weather_code,wind_speed_10m'
-        + '&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,'
-        + 'precipitation_probability,precipitation,weather_code,wind_speed_10m,is_day'
-        + '&daily=weather_code,temperature_2m_max,temperature_2m_min,'
-        + 'apparent_temperature_max,precipitation_sum,precipitation_probability_max,'
-        + 'wind_speed_10m_max,uv_index_max';
+    /* Naas, Co. Kildare, Ireland — a subtle "comparison with home" shown only
+       on the weather page (never on the home card). Requested in the resort
+       timezone so its hourly/daily arrays line up, by time-string, with the
+       resort's (same instant in time). */
+    var NAAS_LAT = 53.2158;
+    var NAAS_LON = -6.6669;
+
+    /* Lookup maps for the Naas comparison, populated once its data lands. */
+    var naasMaps = null;
+
+    function buildUrl(lat, lon) {
+        return 'https://api.open-meteo.com/v1/forecast'
+            + '?latitude=' + lat + '&longitude=' + lon
+            + '&timezone=' + encodeURIComponent(TZ)
+            + '&forecast_days=7'
+            + '&current=temperature_2m,relative_humidity_2m,apparent_temperature,'
+            + 'is_day,weather_code,wind_speed_10m'
+            + '&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,'
+            + 'precipitation_probability,precipitation,weather_code,wind_speed_10m,is_day'
+            + '&daily=weather_code,temperature_2m_max,temperature_2m_min,'
+            + 'apparent_temperature_max,precipitation_sum,precipitation_probability_max,'
+            + 'wind_speed_10m_max,uv_index_max';
+    }
+
+    var API_URL = buildUrl(LAT, LON);
+    var NAAS_URL = buildUrl(NAAS_LAT, NAAS_LON);
 
     /* ---- WMO weather-code → emoji + label ----------------------------------
        Clear/partly-cloudy codes get a night variant so hourly cells and the
@@ -121,18 +137,37 @@
     }
 
     /* ---- Caching ----------------------------------------------------------- */
-    function loadCache() {
+    function loadJSON(key) {
         try {
-            var raw = localStorage.getItem(CACHE_KEY);
+            var raw = localStorage.getItem(key);
             return raw ? JSON.parse(raw) : null;
         } catch (e) { return null; }
     }
 
-    function saveCache(data) {
+    function saveJSON(key, data) {
         try {
-            localStorage.setItem(CACHE_KEY,
+            localStorage.setItem(key,
                 JSON.stringify({ savedAt: Date.now(), data: data }));
         } catch (e) { /* storage full / unavailable — ignore */ }
+    }
+
+    /* Build fast lookups for the Naas comparison: temperature by hour-string,
+       and high/low/code by date. */
+    function buildNaasMaps(payload) {
+        if (!payload || !payload.hourly || !payload.daily) { return null; }
+        var h = {};
+        for (var i = 0; i < payload.hourly.time.length; i++) {
+            h[payload.hourly.time[i]] = payload.hourly.temperature_2m[i];
+        }
+        var dc = {};
+        for (var j = 0; j < payload.daily.time.length; j++) {
+            dc[payload.daily.time[j]] = {
+                max: payload.daily.temperature_2m_max[j],
+                min: payload.daily.temperature_2m_min[j],
+                code: payload.daily.weather_code[j]
+            };
+        }
+        return { h: h, dc: dc, cur: payload.current };
     }
 
     function agoLabel(ts) {
@@ -298,6 +333,19 @@
         }).join('');
     }
 
+    /* A muted "vs Naas" line for the current card, e.g.
+       "☘️ Naas now 24° · Clear sky (3° cooler)". Empty if Naas isn't loaded. */
+    function naasCurrentLine(c) {
+        if (!naasMaps || !naasMaps.cur) { return ''; }
+        var nc = naasMaps.cur;
+        var nd = describe(nc.weather_code, nc.is_day);
+        var delta = round(nc.temperature_2m) - round(c.temperature_2m);
+        var deltaTxt = delta === 0 ? 'about the same'
+            : Math.abs(delta) + '° ' + (delta < 0 ? 'cooler' : 'warmer');
+        return '<div class="wx-naas wx-cur-naas">☘️ Naas now ' + temp(nc.temperature_2m)
+            + ' · ' + nd.label + ' (' + deltaTxt + ')</div>';
+    }
+
     function renderCurrent(c) {
         var host = document.getElementById('wx-current');
         if (!host) { return; }
@@ -313,6 +361,7 @@
             +     '<span>💧 ' + round(c.relative_humidity_2m) + '%</span>'
             +     '<span>💨 ' + round(c.wind_speed_10m) + ' km/h</span>'
             +   '</div>'
+            +   naasCurrentLine(c)
             + '</div>';
     }
 
@@ -332,6 +381,9 @@
             if (t.hour < nowHour) { cls += ' is-past'; }
             if (t.hour === nowHour) { cls += ' is-now'; nowIndex = shown; }
             var prob = h.precipitation_probability[i];
+            var naasT = naasMaps && naasMaps.h ? naasMaps.h[h.time[i]] : null;
+            var naasCell = (naasT == null) ? ''
+                : '<div class="wx-naas">☘️ ' + temp(naasT) + '</div>';
             cells +=
                 '<div class="' + cls + '">'
                 + '<div class="wx-hour-time">' + (t.hour === nowHour ? 'Now' : t.hhmm) + '</div>'
@@ -341,6 +393,7 @@
                 + '<div class="wx-hour-rain' + (prob >= 30 ? ' on' : '') + '">💧'
                 +    (prob == null ? 0 : round(prob)) + '%</div>'
                 + '<div class="wx-hour-hum">' + round(h.relative_humidity_2m[i]) + '%</div>'
+                + naasCell
                 + '</div>';
             shown++;
         }
@@ -370,7 +423,7 @@
         var h = data.hourly;
 
         host.innerHTML = PARTS.map(function (part) {
-            var temps = [], hums = [], codes = [], rain = 0;
+            var temps = [], hums = [], codes = [], naasTemps = [], rain = 0;
             for (var i = 0; i < h.time.length; i++) {
                 var t = parseTime(h.time[i]);
                 if (t.date !== tomorrow) { continue; }
@@ -378,6 +431,10 @@
                 temps.push(h.temperature_2m[i]);
                 hums.push(h.relative_humidity_2m[i]);
                 codes.push(h.weather_code[i]);
+                if (naasMaps && naasMaps.h) {
+                    var nt = naasMaps.h[h.time[i]];
+                    if (nt != null) { naasTemps.push(nt); }
+                }
                 var p = h.precipitation_probability[i];
                 if (p != null && p > rain) { rain = p; }
             }
@@ -387,6 +444,9 @@
             var worst = codes.reduce(function (a, b) { return Math.max(a, b); }, 0);
             /* Night uses the moon regardless of the daytime icon. */
             var d = describe(worst, part.key === 'Night' ? 0 : 1);
+            var naasLine = naasTemps.length
+                ? '<div class="wx-naas">☘️ Naas ' + temp(naasTemps.reduce(add, 0) / naasTemps.length) + '</div>'
+                : '';
             return '<div class="wx-part">'
                 + '<div class="wx-part-head"><span aria-hidden="true">' + part.emoji
                 +    '</span> ' + part.key + '</div>'
@@ -398,6 +458,7 @@
                 +   '<span>💦 ' + avgH + '% hum</span>'
                 + '</div>'
                 + humidityBar(avgH)
+                + naasLine
                 + '</div>';
         }).join('');
     }
@@ -415,6 +476,10 @@
             var date = dy.time[i];
             var d = describe(dy.weather_code[i], 1);
             var hum = hums[date];
+            var nd = naasMaps && naasMaps.dc ? naasMaps.dc[date] : null;
+            var naasChip = nd
+                ? '<span class="wx-naas">☘️ ' + temp(nd.max) + '/' + temp(nd.min) + '</span>'
+                : '';
             html += '<div class="wx-day">'
                 + '<div class="wx-day-name">' + dayLong(date) + '</div>'
                 + '<div class="wx-day-icon" aria-hidden="true">' + d.emoji + '</div>'
@@ -430,6 +495,7 @@
                 +   '<span>💦 ' + (hum == null ? '–' : hum + '%') + '</span>'
                 +   '<span>☀️ UV ' + round(dy.uv_index_max[i] || 0) + '</span>'
                 +   '<span>💨 ' + round(dy.wind_speed_10m_max[i] || 0) + '</span>'
+                +   naasChip
                 + '</div>'
                 + '</div>';
         }
@@ -439,16 +505,42 @@
     /* =======================================================================
        Load + refresh
        ======================================================================= */
-    function render(data, meta) {
-        renderHome(data, meta);
-        renderPage(data, meta);
+    /* Latest resort forecast + its status label, kept so we can repaint when
+       the (best-effort) Naas comparison arrives a moment later. */
+    var state = { data: null, meta: '' };
+
+    function paint() {
+        if (!state.data) { return; }
+        renderHome(state.data, state.meta);
+        renderPage(state.data, state.meta);
     }
 
-    function fetchFresh() {
-        return fetch(API_URL, { cache: 'no-store' }).then(function (r) {
+    function render(data, meta) {
+        state.data = data;
+        state.meta = meta;
+        paint();
+    }
+
+    function fetchJSON(url) {
+        return fetch(url, { cache: 'no-store' }).then(function (r) {
             if (!r.ok) { throw new Error('HTTP ' + r.status); }
             return r.json();
         });
+    }
+
+    function markRendered() {
+        var home = document.getElementById('weather-home');
+        if (home) { home.dataset.rendered = '1'; }
+    }
+
+    /* Best-effort Naas comparison: fetch, cache and repaint when it lands.
+       A failure here never blocks or disturbs the main forecast. */
+    function loadNaas() {
+        fetchJSON(NAAS_URL).then(function (d) {
+            saveJSON(NAAS_CACHE_KEY, d);
+            naasMaps = buildNaasMaps(d);
+            paint();
+        }).catch(function () { /* keep any cached Naas data we already showed */ });
     }
 
     function showError() {
@@ -463,33 +555,37 @@
     }
 
     function init() {
-        var hasSurface = document.getElementById('weather-home')
-            || document.getElementById('wx-current');
+        var onWeatherPage = !!document.getElementById('wx-current');
+        var hasSurface = document.getElementById('weather-home') || onWeatherPage;
         if (!hasSurface) { return; }
 
-        var cached = loadCache();
+        var cached = loadJSON(CACHE_KEY);
+        var naasCached = loadJSON(NAAS_CACHE_KEY);
+        if (naasCached && naasCached.data) { naasMaps = buildNaasMaps(naasCached.data); }
+
         if (cached && cached.data) {
             render(cached.data, 'Updated ' + agoLabel(cached.savedAt));
-            var home = document.getElementById('weather-home');
-            if (home) { home.dataset.rendered = '1'; }
+            markRendered();
         } else {
             setStatus('Loading forecast…');
         }
 
-        /* Skip the network call if we just refreshed and we're not on a manual
-           reload — but always try when the cache is missing or stale. */
+        /* Skip the network call if we just refreshed and we're offline — but
+           always try when the cache is missing or stale. */
         var fresh = cached && (Date.now() - cached.savedAt) < MAX_AGE_MS;
         if (fresh && !navigator.onLine) { return; }
 
-        fetchFresh().then(function (data) {
-            saveCache(data);
+        fetchJSON(API_URL).then(function (data) {
+            saveJSON(CACHE_KEY, data);
             render(data, 'Updated just now');
-            var home = document.getElementById('weather-home');
-            if (home) { home.dataset.rendered = '1'; }
+            markRendered();
         }).catch(function () {
             if (!cached) { showError(); }
             /* else keep showing the cached forecast with its "x ago" label */
         });
+
+        /* The Naas comparison only appears on the dedicated weather page. */
+        if (onWeatherPage) { loadNaas(); }
     }
 
     /* Manual refresh button on the weather page. */
@@ -498,12 +594,13 @@
         if (!btn) { return; }
         btn.addEventListener('click', function () {
             setStatus('Refreshing…');
-            fetchFresh().then(function (data) {
-                saveCache(data);
+            fetchJSON(API_URL).then(function (data) {
+                saveJSON(CACHE_KEY, data);
                 render(data, 'Updated just now');
             }).catch(function () {
                 setStatus('Refresh failed — still offline?');
             });
+            loadNaas();
         });
     }
 

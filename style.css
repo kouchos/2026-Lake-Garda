@@ -714,6 +714,29 @@ footer p::before {
     background: linear-gradient(90deg, #56b4e9, #2f80ed);
 }
 
+/* Subtle "vs Naas" comparison figures, woven into the weather page only.
+   Deliberately small and muted so they never compete with the resort data. */
+.wx-naas {
+    margin-top: 5px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--muted-text);
+    opacity: 0.85;
+    white-space: nowrap;
+}
+
+.wx-cur-naas {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.wx-legend {
+    margin-top: -6px;
+    font-size: 0.85rem;
+    color: var(--muted-text);
+}
+
 /* ---- Home-page "today" card ------------------------------------------- */
 .weather-home {
     margin: 6px 0 30px;
