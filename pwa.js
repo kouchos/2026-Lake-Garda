@@ -7,8 +7,40 @@
     'use strict';
 
     if ('serviceWorker' in navigator) {
+        /* When a freshly-deployed worker takes control, reload once so the
+           page shows the new content instead of the previously cached copy.
+           Only do this for real updates — the first install also claims the
+           page (no prior controller), and that shouldn't trigger a reload. */
+        var hadController = !!navigator.serviceWorker.controller;
+        var reloading = false;
+        navigator.serviceWorker.addEventListener('controllerchange', function () {
+            if (reloading || !hadController) {
+                return;
+            }
+            reloading = true;
+            window.location.reload();
+        });
+
         window.addEventListener('load', function () {
-            navigator.serviceWorker.register('sw.js').catch(function () {
+            navigator.serviceWorker.register('sw.js').then(function (reg) {
+                /* Check for an updated worker each time the app is opened, so
+                   content refreshes whenever the device is back online. */
+                reg.update();
+                reg.addEventListener('updatefound', function () {
+                    var sw = reg.installing;
+                    if (!sw) {
+                        return;
+                    }
+                    sw.addEventListener('statechange', function () {
+                        /* A new worker has installed while an old one controls
+                           the page — activate it immediately. */
+                        if (sw.state === 'installed' &&
+                            navigator.serviceWorker.controller) {
+                            sw.postMessage('skip-waiting');
+                        }
+                    });
+                });
+            }).catch(function () {
                 /* offline support is progressive enhancement — ignore */
             });
         });
