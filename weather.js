@@ -22,17 +22,18 @@
     var TZ = 'Europe/Rome';
 
     var CACHE_KEY = 'garda-weather-cache-v1';
-    var NICE_CACHE_KEY = 'garda-weather-nice-v1';
+    var NAAS_CACHE_KEY = 'garda-weather-naas-v1';
     var MAX_AGE_MS = 30 * 60 * 1000;   /* consider data "fresh" for 30 min */
 
-    /* Nice, France — a subtle Riviera comparison shown only on the weather
-       page (never on the home card). Requested in the resort timezone so its
-       hourly/daily arrays line up by index with the resort's. */
-    var NICE_LAT = 43.7102;
-    var NICE_LON = 7.2620;
+    /* Naas, Co. Kildare, Ireland — a subtle "comparison with home" shown only
+       on the weather page (never on the home card). Requested in the resort
+       timezone so its hourly/daily arrays line up, by time-string, with the
+       resort's (same instant in time). */
+    var NAAS_LAT = 53.2158;
+    var NAAS_LON = -6.6669;
 
-    /* Lookup maps for the Nice comparison, populated once its data lands. */
-    var niceMaps = null;
+    /* Lookup maps for the Naas comparison, populated once its data lands. */
+    var naasMaps = null;
 
     function buildUrl(lat, lon) {
         return 'https://api.open-meteo.com/v1/forecast'
@@ -49,7 +50,7 @@
     }
 
     var API_URL = buildUrl(LAT, LON);
-    var NICE_URL = buildUrl(NICE_LAT, NICE_LON);
+    var NAAS_URL = buildUrl(NAAS_LAT, NAAS_LON);
 
     /* ---- WMO weather-code → emoji + label ----------------------------------
        Clear/partly-cloudy codes get a night variant so hourly cells and the
@@ -150,9 +151,9 @@
         } catch (e) { /* storage full / unavailable — ignore */ }
     }
 
-    /* Build fast lookups for the Nice comparison: temperature by hour-string,
+    /* Build fast lookups for the Naas comparison: temperature by hour-string,
        and high/low/code by date. */
-    function buildNiceMaps(payload) {
+    function buildNaasMaps(payload) {
         if (!payload || !payload.hourly || !payload.daily) { return null; }
         var h = {};
         for (var i = 0; i < payload.hourly.time.length; i++) {
@@ -332,16 +333,16 @@
         }).join('');
     }
 
-    /* A muted "vs Nice" line for the current card, e.g.
-       "🌴 Nice now 24° · Clear sky (3° cooler)". Empty if Nice isn't loaded. */
-    function niceCurrentLine(c) {
-        if (!niceMaps || !niceMaps.cur) { return ''; }
-        var nc = niceMaps.cur;
+    /* A muted "vs Naas" line for the current card, e.g.
+       "☘️ Naas now 24° · Clear sky (3° cooler)". Empty if Naas isn't loaded. */
+    function naasCurrentLine(c) {
+        if (!naasMaps || !naasMaps.cur) { return ''; }
+        var nc = naasMaps.cur;
         var nd = describe(nc.weather_code, nc.is_day);
         var delta = round(nc.temperature_2m) - round(c.temperature_2m);
         var deltaTxt = delta === 0 ? 'about the same'
             : Math.abs(delta) + '° ' + (delta < 0 ? 'cooler' : 'warmer');
-        return '<div class="wx-nice wx-cur-nice">🌴 Nice now ' + temp(nc.temperature_2m)
+        return '<div class="wx-naas wx-cur-naas">☘️ Naas now ' + temp(nc.temperature_2m)
             + ' · ' + nd.label + ' (' + deltaTxt + ')</div>';
     }
 
@@ -360,7 +361,7 @@
             +     '<span>💧 ' + round(c.relative_humidity_2m) + '%</span>'
             +     '<span>💨 ' + round(c.wind_speed_10m) + ' km/h</span>'
             +   '</div>'
-            +   niceCurrentLine(c)
+            +   naasCurrentLine(c)
             + '</div>';
     }
 
@@ -380,9 +381,9 @@
             if (t.hour < nowHour) { cls += ' is-past'; }
             if (t.hour === nowHour) { cls += ' is-now'; nowIndex = shown; }
             var prob = h.precipitation_probability[i];
-            var niceT = niceMaps && niceMaps.h ? niceMaps.h[h.time[i]] : null;
-            var niceCell = (niceT == null) ? ''
-                : '<div class="wx-nice">🌴 ' + temp(niceT) + '</div>';
+            var naasT = naasMaps && naasMaps.h ? naasMaps.h[h.time[i]] : null;
+            var naasCell = (naasT == null) ? ''
+                : '<div class="wx-naas">☘️ ' + temp(naasT) + '</div>';
             cells +=
                 '<div class="' + cls + '">'
                 + '<div class="wx-hour-time">' + (t.hour === nowHour ? 'Now' : t.hhmm) + '</div>'
@@ -392,7 +393,7 @@
                 + '<div class="wx-hour-rain' + (prob >= 30 ? ' on' : '') + '">💧'
                 +    (prob == null ? 0 : round(prob)) + '%</div>'
                 + '<div class="wx-hour-hum">' + round(h.relative_humidity_2m[i]) + '%</div>'
-                + niceCell
+                + naasCell
                 + '</div>';
             shown++;
         }
@@ -422,7 +423,7 @@
         var h = data.hourly;
 
         host.innerHTML = PARTS.map(function (part) {
-            var temps = [], hums = [], codes = [], niceTemps = [], rain = 0;
+            var temps = [], hums = [], codes = [], naasTemps = [], rain = 0;
             for (var i = 0; i < h.time.length; i++) {
                 var t = parseTime(h.time[i]);
                 if (t.date !== tomorrow) { continue; }
@@ -430,9 +431,9 @@
                 temps.push(h.temperature_2m[i]);
                 hums.push(h.relative_humidity_2m[i]);
                 codes.push(h.weather_code[i]);
-                if (niceMaps && niceMaps.h) {
-                    var nt = niceMaps.h[h.time[i]];
-                    if (nt != null) { niceTemps.push(nt); }
+                if (naasMaps && naasMaps.h) {
+                    var nt = naasMaps.h[h.time[i]];
+                    if (nt != null) { naasTemps.push(nt); }
                 }
                 var p = h.precipitation_probability[i];
                 if (p != null && p > rain) { rain = p; }
@@ -443,8 +444,8 @@
             var worst = codes.reduce(function (a, b) { return Math.max(a, b); }, 0);
             /* Night uses the moon regardless of the daytime icon. */
             var d = describe(worst, part.key === 'Night' ? 0 : 1);
-            var niceLine = niceTemps.length
-                ? '<div class="wx-nice">🌴 Nice ' + temp(niceTemps.reduce(add, 0) / niceTemps.length) + '</div>'
+            var naasLine = naasTemps.length
+                ? '<div class="wx-naas">☘️ Naas ' + temp(naasTemps.reduce(add, 0) / naasTemps.length) + '</div>'
                 : '';
             return '<div class="wx-part">'
                 + '<div class="wx-part-head"><span aria-hidden="true">' + part.emoji
@@ -457,7 +458,7 @@
                 +   '<span>💦 ' + avgH + '% hum</span>'
                 + '</div>'
                 + humidityBar(avgH)
-                + niceLine
+                + naasLine
                 + '</div>';
         }).join('');
     }
@@ -475,9 +476,9 @@
             var date = dy.time[i];
             var d = describe(dy.weather_code[i], 1);
             var hum = hums[date];
-            var nd = niceMaps && niceMaps.dc ? niceMaps.dc[date] : null;
-            var niceChip = nd
-                ? '<span class="wx-nice">🌴 ' + temp(nd.max) + '/' + temp(nd.min) + '</span>'
+            var nd = naasMaps && naasMaps.dc ? naasMaps.dc[date] : null;
+            var naasChip = nd
+                ? '<span class="wx-naas">☘️ ' + temp(nd.max) + '/' + temp(nd.min) + '</span>'
                 : '';
             html += '<div class="wx-day">'
                 + '<div class="wx-day-name">' + dayLong(date) + '</div>'
@@ -494,7 +495,7 @@
                 +   '<span>💦 ' + (hum == null ? '–' : hum + '%') + '</span>'
                 +   '<span>☀️ UV ' + round(dy.uv_index_max[i] || 0) + '</span>'
                 +   '<span>💨 ' + round(dy.wind_speed_10m_max[i] || 0) + '</span>'
-                +   niceChip
+                +   naasChip
                 + '</div>'
                 + '</div>';
         }
@@ -505,7 +506,7 @@
        Load + refresh
        ======================================================================= */
     /* Latest resort forecast + its status label, kept so we can repaint when
-       the (best-effort) Nice comparison arrives a moment later. */
+       the (best-effort) Naas comparison arrives a moment later. */
     var state = { data: null, meta: '' };
 
     function paint() {
@@ -532,14 +533,14 @@
         if (home) { home.dataset.rendered = '1'; }
     }
 
-    /* Best-effort Nice comparison: fetch, cache and repaint when it lands.
+    /* Best-effort Naas comparison: fetch, cache and repaint when it lands.
        A failure here never blocks or disturbs the main forecast. */
-    function loadNice() {
-        fetchJSON(NICE_URL).then(function (d) {
-            saveJSON(NICE_CACHE_KEY, d);
-            niceMaps = buildNiceMaps(d);
+    function loadNaas() {
+        fetchJSON(NAAS_URL).then(function (d) {
+            saveJSON(NAAS_CACHE_KEY, d);
+            naasMaps = buildNaasMaps(d);
             paint();
-        }).catch(function () { /* keep any cached Nice data we already showed */ });
+        }).catch(function () { /* keep any cached Naas data we already showed */ });
     }
 
     function showError() {
@@ -559,8 +560,8 @@
         if (!hasSurface) { return; }
 
         var cached = loadJSON(CACHE_KEY);
-        var niceCached = loadJSON(NICE_CACHE_KEY);
-        if (niceCached && niceCached.data) { niceMaps = buildNiceMaps(niceCached.data); }
+        var naasCached = loadJSON(NAAS_CACHE_KEY);
+        if (naasCached && naasCached.data) { naasMaps = buildNaasMaps(naasCached.data); }
 
         if (cached && cached.data) {
             render(cached.data, 'Updated ' + agoLabel(cached.savedAt));
@@ -583,8 +584,8 @@
             /* else keep showing the cached forecast with its "x ago" label */
         });
 
-        /* The Nice comparison only appears on the dedicated weather page. */
-        if (onWeatherPage) { loadNice(); }
+        /* The Naas comparison only appears on the dedicated weather page. */
+        if (onWeatherPage) { loadNaas(); }
     }
 
     /* Manual refresh button on the weather page. */
@@ -599,7 +600,7 @@
             }).catch(function () {
                 setStatus('Refresh failed — still offline?');
             });
-            loadNice();
+            loadNaas();
         });
     }
 
