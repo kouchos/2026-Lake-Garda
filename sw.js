@@ -7,12 +7,13 @@
    IMPORTANT: bump CACHE_VERSION whenever site content changes, so installed
    apps pick up the new pages on their next online visit. */
 
-var CACHE_VERSION = 'garda-2026-v4';
+var CACHE_VERSION = 'garda-2026-v5';
 
 /* Local pages + assets — these MUST be available offline. */
 var PRECACHE = [
     './',
     'index.html',
+    'weather.html',
     'itinerary.html',
     'booking.html',
     'logistics.html',
@@ -40,6 +41,7 @@ var PRECACHE = [
     'style.css',
     'theme.js',
     'pwa.js',
+    'weather.js',
     'manifest.json',
     'icons/icon.svg',
     'icons/icon-192.png',
@@ -92,6 +94,27 @@ self.addEventListener('activate', function (event) {
 self.addEventListener('fetch', function (event) {
     var request = event.request;
     if (request.method !== 'GET') {
+        return;
+    }
+
+    /* Live weather API: network-first so an online device always gets the
+       freshest forecast, falling back to the last cached response when offline
+       (so the weather page/home card still show something poolside or roaming). */
+    if (request.url.indexOf('api.open-meteo.com') !== -1) {
+        event.respondWith(
+            caches.open(CACHE_VERSION).then(function (cache) {
+                return fetch(request).then(function (response) {
+                    if (response && response.ok) {
+                        cache.put(request, response.clone());
+                    }
+                    return response;
+                }).catch(function () {
+                    return cache.match(request).then(function (cached) {
+                        return cached || Response.error();
+                    });
+                });
+            })
+        );
         return;
     }
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lake Garda Itinerary - Booking Details</title>
+    <title>Lake Garda Itinerary - Weather</title>
     <meta name="theme-color" content="#0b76b8">
     <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c141d">
     <link rel="manifest" href="manifest.json">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://api.open-meteo.com">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
     <script>
         (function () {
@@ -26,12 +27,13 @@
     </script>
     <script src="theme.js" defer></script>
     <script src="pwa.js" defer></script>
+    <script src="weather.js" defer></script>
 </head>
 <body>
-    <header class="site-header header-booking">
+    <header class="site-header header-weather">
         <div class="header-inner">
-            <p class="header-eyebrow">Lake Garda · 27 June – 7 July 2026</p>
-            <h1>1. Booking Details (Confirmed)</h1>
+            <p class="header-eyebrow">Peschiera del Garda · Live forecast</p>
+            <h1>Weather</h1>
         </div>
     </header>
     <nav id="site-nav">
@@ -43,9 +45,9 @@
             <div class="nav-group">
                 <span class="nav-group-label">Plan</span>
                     <a href="index.html">Home</a>
-                    <a href="weather.html">Weather</a>
+                    <a href="weather.html" class="active">Weather</a>
                     <a href="itinerary.html">Itinerary</a>
-                    <a href="booking.html" class="active">Booking</a>
+                    <a href="booking.html">Booking</a>
                     <a href="logistics.html">Logistics</a>
                     <a href="transfer.html">Transfer</a>
                     <a href="essentials.html">Essentials</a>
@@ -83,53 +85,42 @@
     </nav>
     <div class="nav-backdrop" hidden></div>
     <main>
-        <p><strong>Accommodation:</strong> Mobile Home Clivia Medium (4+1)<br>
-        <strong>Booking Reference:</strong> <code>2026011245404197</code></p>
+        <p>Live 7-day forecast for <strong>Del Garda Village &amp; Camping</strong>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Del+Garda+Village+Camping+Peschiera+del+Garda" target="_blank">Map</a>
+            in Peschiera del Garda. It refreshes whenever you&rsquo;re online and keeps the last
+            forecast cached so it still works poolside or with the phone in airplane mode.</p>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Item</th>
-                    <th>Cost</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Total Accommodation</strong></td>
-                    <td><strong>€2,170.50</strong></td>
-                    <td>Includes Sheets, Towels, Cleaning</td>
-                </tr>
-                <tr>
-                    <td>Deposit Paid</td>
-                    <td>€542.63</td>
-                    <td><strong>PAID</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Balance Due</strong></td>
-                    <td><strong>€1,627.87</strong></td>
-                    <td><strong>Pay on Arrival</strong></td>
-                </tr>
-                <tr>
-                    <td>Security Deposit</td>
-                    <td>€100.00</td>
-                    <td><strong>Cash on Arrival</strong> (Refundable)</td>
-                </tr>
-                <tr>
-                    <td>Tourist Tax</td>
-                    <td>~€22.00</td>
-                    <td>Pay on Arrival (€1.10 pppn for Adults)</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="weather-status" id="weather-status">
+            <span class="ws-text">Loading forecast…</span>
+            <button type="button" id="weather-refresh">↻ Refresh</button>
+        </div>
 
-        <h3>Important Rules:</h3>
-        <ul>
-            <li><strong>Check-in:</strong> Register from <strong>11:00am</strong> (access pools/facilities). Keys available from <strong>16:00</strong>.</li>
-            <li><strong>Check-out:</strong> 08:00am - 10:00am.</li>
-            <li><strong>Air Con:</strong> 12 hours per day included. Extra usage charged at €1.00/hour.</li>
-            <li><strong>Cancellation:</strong> Free cancellation until <strong>12 June 2026</strong>.</li>
-        </ul>
+        <h2>1. Severe Weather Warnings</h2>
+        <p><em>Practical heat, rain and lightning flags derived from the forecast
+            (no official alert feed is available for a key-less app) &mdash; always
+            double-check locally before lake or mountain plans.</em></p>
+        <div class="wx-warnings" id="wx-warnings"></div>
+
+        <h2>2. Right Now</h2>
+        <div class="wx-current" id="wx-current"></div>
+
+        <h2>3. Today, Hour by Hour</h2>
+        <p>Scroll across for the rest of today. &ldquo;Now&rdquo; is highlighted;
+            each cell shows the conditions, temperature, chance of rain (💧) and humidity.</p>
+        <div class="wx-hourly" id="wx-hourly"></div>
+
+        <h2>4. Tomorrow</h2>
+        <p>Split into morning, afternoon, evening and night so you can pick the right window.</p>
+        <div class="wx-parts" id="wx-tomorrow"></div>
+
+        <h2>5. The Next 7 Days</h2>
+        <p>Daily summary for the rest of the week &mdash; high/low temperature, rain chance,
+            average humidity, peak UV and top wind speed.</p>
+        <div class="wx-days" id="wx-daily"></div>
+
+        <p style="margin-top:28px"><em>Forecast data from
+            <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>.
+            Temperatures in &deg;C, wind in km/h, times in local resort time.</em></p>
     </main>
     <footer>
         <p>Summer 2026 Trip to Lake Garda</p>
