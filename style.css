@@ -224,6 +224,7 @@ body {
 .header-running     { background: linear-gradient(150deg, #065f46 0%, #0d9488 55%, #4fd8c4 100%); }
 .header-dining      { background: linear-gradient(150deg, #991b1b 0%, #dc4d12 60%, #f08c3a 100%); }
 .header-food        { background: linear-gradient(150deg, #9d174d 0%, #e0542e 60%, #f59e0b 100%); }
+.header-wines       { background: linear-gradient(150deg, #4a0e2e 0%, #8c1d40 55%, #c98a3a 100%); }
 .header-etiquette   { background: linear-gradient(150deg, #5c3d1f 0%, #a3793e 60%, #d2a960 100%); }
 .header-packing     { background: linear-gradient(150deg, #3730a3 0%, #6d28d9 60%, #a855f7 100%); }
 .header-budget      { background: linear-gradient(150deg, #14532d 0%, #54820e 55%, #d9a40a 100%); }
