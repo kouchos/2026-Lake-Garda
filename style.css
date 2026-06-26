@@ -1047,20 +1047,18 @@ footer p::before {
     }
 
     /* The links move into an off-canvas drawer that slides in from the left.
-       Pin it between top:0 and bottom:0 (rather than a fixed 100vh height) so it
-       always matches the *visible* viewport — on mobile, 100vh can be taller than
-       the screen once the browser toolbars show, which would push the last nav
-       group (Food & Culture) below the fold and out of scroll reach. */
+       It fills the visible viewport (100dvh = the *dynamic* viewport, so it stays
+       correct as the mobile browser toolbars show/hide) and scrolls internally,
+       with safe-area bottom padding so the last nav group (Food & Culture) clears
+       the home indicator / bottom toolbar and stays reachable. */
     .nav-links {
         position: fixed;
         top: 0;
-        bottom: 0;
         left: 0;
         z-index: 1200;
         width: min(82vw, 320px);
-        height: auto;
-        max-height: 100vh;
-        max-height: 100dvh;
+        height: 100vh;
+        height: 100dvh;
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: stretch;
