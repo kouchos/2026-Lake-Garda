@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lake Garda Itinerary - Local Wines</title>
+    <meta name="theme-color" content="#0b76b8">
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0c141d">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..700;1,9..144,500..700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('theme');
+                if (!t) {
+                    t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+    <script src="theme.js" defer></script>
+    <script src="pwa.js" defer></script>
+</head>
+<body>
+    <header class="site-header header-wines">
+        <div class="header-inner">
+            <p class="header-eyebrow">Lake Garda · 27 June – 7 July 2026</p>
+            <h1>Local Wines of Lake Garda</h1>
+        </div>
+    </header>
+    <nav id="site-nav">
+        <button type="button" class="nav-toggle" aria-label="Open navigation menu" aria-controls="nav-links" aria-expanded="false">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+            <span class="nav-toggle-text">Menu</span>
+        </button>
+        <div class="nav-links" id="nav-links">
+            <div class="nav-group">
+                <span class="nav-group-label">Plan</span>
+                    <a href="index.html">Home</a>
+                    <a href="weather.html">Weather</a>
+                    <a href="itinerary.html">Itinerary</a>
+                    <a href="booking.html">Booking</a>
+                    <a href="logistics.html">Logistics</a>
+                    <a href="transfer.html">Transfer</a>
+                    <a href="essentials.html">Essentials</a>
+                    <a href="packing.html">Packing</a>
+                    <a href="budget.html">Budget</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-group-label">Resort &amp; Active</span>
+                    <a href="resort.html">Resort</a>
+                    <a href="beaches.html">Beaches</a>
+                    <a href="bikes.html">Bike Hire</a>
+                    <a href="running.html">Running</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-group-label">Days Out</span>
+                    <a href="activities.html">Activities</a>
+                    <a href="gardaland.html">Gardaland</a>
+                    <a href="canevaworld.html">CanevaWorld</a>
+                    <a href="boats.html">Boat Hire</a>
+                    <a href="daytrips.html">Day Trips</a>
+                    <a href="venice.html">Venice Day</a>
+                    <a href="towns.html">Towns</a>
+                    <a href="nature.html">Nature &amp; Parks</a>
+                    <a href="markets.html">Markets</a>
+            </div>
+            <div class="nav-group">
+                <span class="nav-group-label">Food &amp; Culture</span>
+                    <a href="dining.html">Dining</a>
+                    <a href="food.html">Food &amp; Drink</a>
+                    <a href="wines.html" class="active">Wines</a>
+                    <a href="etiquette.html">Etiquette</a>
+                    <a href="phrases.html">Phrases</a>
+            </div>
+        </div>
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+    </nav>
+    <div class="nav-backdrop" hidden></div>
+    <main>
+        <p><em>Peschiera sits in the middle of one of Italy's great wine corners. Within a short
+            drive (or cycle) are the vineyards of <strong>Lugana</strong>, <strong>Bardolino</strong>,
+            <strong>Custoza</strong>, <strong>Soave</strong> and the legendary <strong>Valpolicella</strong>
+            (home of Amarone). This page is the grown-ups' guide — what to drink, what to bring home,
+            and where to taste it. For the wider food scene see
+            <a href="food.html">Food &amp; Drink</a>; for restaurants and what to order, see
+            <a href="dining.html">Dining</a>.</em></p>
+
+        <h3>🍷 The Local Wines, At a Glance</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Wine</th>
+                        <th>Style</th>
+                        <th>Drink it with…</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lugana</strong></td>
+                        <td>Crisp dry white</td>
+                        <td>Lake fish, seafood pasta, lazy lunches</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bardolino</strong></td>
+                        <td>Light, fruity red (chill it!)</td>
+                        <td>Pizza, tomato pasta, grilled meat</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bardolino Chiaretto</strong></td>
+                        <td>Pale dry rosé</td>
+                        <td>Aperitivo, salads, hot afternoons</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bianco di Custoza</strong></td>
+                        <td>Aromatic dry white</td>
+                        <td>Antipasti, risotto, light starters</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Valpolicella Classico</strong></td>
+                        <td>Easy medium red</td>
+                        <td>Pasta al ragù, cured meats</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Valpolicella Ripasso</strong></td>
+                        <td>Richer "baby Amarone" red</td>
+                        <td>Roast meats, hard cheese</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Amarone della Valpolicella</strong></td>
+                        <td>Powerful dried-grape red</td>
+                        <td>Sip slowly after dinner; aged cheese</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Recioto della Valpolicella</strong></td>
+                        <td>Sweet red dessert wine</td>
+                        <td>Chocolate, dark fruit puddings</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Soave</strong></td>
+                        <td>Smooth dry white</td>
+                        <td>Risotto, white fish, chicken</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Prosecco</strong></td>
+                        <td>Sparkling white</td>
+                        <td>Aperitivo &amp; the base of a Spritz</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <h3>1. Lugana — the local hero (white)</h3>
+        <ul>
+            <li><strong>What it is:</strong> A crisp, mineral, gently floral dry white grown on the clay
+                soils <em>right here</em> on the southern shore — the vineyards literally start on the edge
+                of Peschiera and run west to Sirmione. Made from the Turbiana grape.</li>
+            <li><strong>Why drink it:</strong> The definitive Lake Garda lunch wine — fresh, easy and
+                low-fuss. If you order one white all holiday, make it this.</li>
+            <li><strong>Ask for:</strong> a <em>Lugana</em> by the glass (<em>"un calice di Lugana"</em>);
+                a bottle of <em>Lugana Superiore</em> if you want a touch more depth.</li>
+            <li><strong>Pairs with:</strong> lake fish, spaghetti alle vongole, fried zucchini flowers,
+                or just an afternoon by the water.</li>
+        </ul>
+
+        <h3>2. Bardolino &amp; Chiaretto — the easy reds &amp; rosé</h3>
+        <ul>
+            <li><strong>What it is:</strong> Light, bright reds from the hills on the eastern shore (the
+                town of <strong>Bardolino</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bardolino+Lake+Garda" target="_blank">Map</a>
+                is ~20 min by car/ferry). The rosé version, <strong>Chiaretto</strong>, is pale, dry and
+                summery.</li>
+            <li><strong>Why drink it:</strong> Bardolino is one of the rare reds you can serve
+                <strong>slightly chilled</strong> — perfect in 30°C heat and light enough for lunch.</li>
+            <li><strong>Ask for:</strong> <em>Bardolino</em> (red) or <em>Bardolino Chiaretto</em> (rosé).
+                A <em>Bardolino Superiore</em> is a small step up.</li>
+            <li><strong>Pairs with:</strong> pizza, tomato-based pasta, grilled sausages — proper holiday food.</li>
+        </ul>
+
+        <h3>3. Bianco di Custoza &amp; Soave — the friendly whites</h3>
+        <ul>
+            <li><strong>Bianco di Custoza:</strong> An aromatic dry white from the
+                <strong>Custoza</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Custoza+Sommacampagna+Verona" target="_blank">Map</a>
+                hills just south of the lake (very close to Peschiera). Soft, floral and great value.</li>
+            <li><strong>Soave:</strong> A smooth, almond-y dry white from east of Verona. Internationally
+                famous and a safe crowd-pleaser.</li>
+            <li><strong>Pairs with:</strong> antipasti, risotto, chicken and lighter dishes.</li>
+        </ul>
+
+        <h3>4. Valpolicella &amp; Amarone — the serious reds</h3>
+        <ul>
+            <li><strong>Valpolicella Classico:</strong> An easy, cherry-fruited everyday red.</li>
+            <li><strong>Valpolicella Ripasso:</strong> Re-fermented on Amarone grape skins for extra body
+                and warmth — the "baby Amarone", and superb value.</li>
+            <li><strong>Amarone della Valpolicella:</strong> The <strong>king of Verona wines</strong> —
+                rich, velvety and high in alcohol, made from grapes dried for months before pressing. A
+                proper after-dinner treat; sip it slowly. Look for it on the list at
+                <a href="dining.html">Raffilù</a> and other smarter spots in town.</li>
+            <li><strong>Recioto della Valpolicella:</strong> The sweet ancestor of Amarone — a dessert red
+                that's wonderful with chocolate.</li>
+            <li><strong>Note:</strong> the Valpolicella vineyards are north of Verona (~40–50 min drive),
+                so these are wines to <em>order in restaurants</em> rather than cycle to.</li>
+        </ul>
+
+        <h3>5. Prosecco &amp; the Spritz culture</h3>
+        <ul>
+            <li><strong>Prosecco:</strong> The Veneto's famous sparkling white — served as an
+                <strong>aperitivo</strong> and as the base of a Spritz.</li>
+            <li><strong>Aperol / Select Spritz:</strong> Prosecco + Aperol (or the Venetian Select) + soda
+                and an orange slice — <em>the</em> 6pm drink by the lake. Order one and watch the sunset.</li>
+            <li><strong>Hugo Spritz:</strong> Prosecco, elderflower and mint — lighter and very refreshing in
+                the heat.</li>
+            <li>See the <a href="food.html">Food &amp; Drink</a> page for the full aperitivo rundown.</li>
+        </ul>
+
+        <h3>🍇 Tasting &amp; Buying Near Peschiera</h3>
+        <p><em>Distances are approximate from Del Garda Village — <strong>verify and book tastings ahead</strong>,
+            especially in peak summer. We have no rental car (private transfer only), so the nearest Lugana
+            cellars are the realistic "visit" option; everything else is best enjoyed by the glass in town.</em></p>
+        <ul>
+            <li><strong>Cantina Le Morette</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cantina+Le+Morette+Peschiera+del+Garda" target="_blank">Map</a>
+                — a respected Lugana producer on the edge of Peschiera itself. The closest "proper winery"
+                to the resort. <em>(Cycle/taxi; confirm tasting hours.)</em></li>
+            <li><strong>Zenato Winery</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Zenato+Winery+San+Benedetto+di+Lugana+Peschiera" target="_blank">Map</a>
+                — one of the most famous Lugana names, in San Benedetto di Lugana just west of town.
+                Tastings by appointment.</li>
+            <li><strong>Ca' dei Frati</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ca+dei+Frati+Lugana+Sirmione" target="_blank">Map</a>
+                — the benchmark Lugana estate, near Sirmione (~15 min drive). Lovely tasting room.</li>
+            <li><strong>Cantina di Custoza</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cantina+di+Custoza+Sommacampagna" target="_blank">Map</a>
+                — a large, welcoming co-operative for Custoza and Bardolino; easy place to buy by the case.</li>
+            <li><strong>Corte Gardoni</strong>
+                <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Corte+Gardoni+Valeggio+sul+Mincio" target="_blank">Map</a>
+                — a friendly family estate near Valeggio sul Mincio (good to combine with a
+                <a href="nature.html">Borghetto / Mincio</a> day) doing Bardolino, Chiaretto and Custoza.</li>
+            <li><strong>In town:</strong> Peschiera's old town has <strong>enoteche</strong> (wine bars/shops)
+                where you can taste a flight and buy bottles without leaving the lakefront — the no-driving,
+                kid-in-tow friendly option.</li>
+        </ul>
+
+        <h3>🧳 What to Bring Home</h3>
+        <ul>
+            <li><strong>A bottle of Lugana</strong> — the taste of this exact corner of the lake; a great-value
+                souvenir (often €8–15 at the cellar door).</li>
+            <li><strong>A Ripasso or Amarone</strong> — the "special bottle" for a winter dinner back home
+                (Ripasso ~€12–20; Amarone €25+ and worth it).</li>
+            <li><strong>Aer Lingus note:</strong> wine goes in <em>checked</em> baggage only (the 100ml liquid
+                rule blocks full bottles in hand luggage). Wrap bottles in clothes or buy a padded wine sleeve;
+                check the current checked-bag weight allowance before loading up. Confirm the duty-free /
+                allowance details near the trip — see <a href="packing.html">Packing</a>.</li>
+        </ul>
+
+        <h3>📖 Reading an Italian Wine Label</h3>
+        <ul>
+            <li><strong>DOC / DOCG</strong> — quality classifications; DOCG is the top tier (Amarone is DOCG).</li>
+            <li><strong>Secco</strong> = dry · <strong>Amabile / Dolce</strong> = off-dry / sweet.</li>
+            <li><strong>Superiore</strong> = a notch up in ripeness/ageing · <strong>Riserva</strong> = aged longer.</li>
+            <li><strong>Classico</strong> = from the historic heartland of the zone.</li>
+            <li><strong>Vendemmia</strong> = vintage (harvest year) · <strong>Cantina</strong> = winery/cellar.</li>
+            <li>More ordering words are on the <a href="phrases.html">Phrases</a> page.</li>
+        </ul>
+
+        <h3>👨‍👩‍👧‍👧 For the Kids &amp; Non-Drinkers</h3>
+        <ul>
+            <li>Most cantine and enoteche are happy to serve <strong>grape juice (succo d'uva)</strong> or
+                soft drinks, and many estates have gardens for the children to potter about while you taste.</li>
+            <li>For the alcohol-free aperitivo hour, order the kids a <strong>Crodino</strong> or
+                <strong>Chinotto</strong> so they can clink glasses too — see
+                <a href="food.html">Food &amp; Drink</a>.</li>
+            <li><strong>Don't drink and drive:</strong> Italy's limit is low (0.5 g/l, and <em>zero</em> for
+                newer drivers). With our private transfer and bikes, it's easiest to taste in town or split a
+                bottle over dinner.</li>
+        </ul>
+    </main>
+    <footer>
+        <p>Summer 2026 Trip to Lake Garda</p>
+    </footer>
+</body>
+</html>
