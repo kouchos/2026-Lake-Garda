@@ -7,7 +7,7 @@
    IMPORTANT: bump CACHE_VERSION whenever site content changes, so installed
    apps pick up the new pages on their next online visit. */
 
-var CACHE_VERSION = 'garda-2026-v8';
+var CACHE_VERSION = 'garda-2026-v9';
 
 /* Local pages + assets — these MUST be available offline. */
 var PRECACHE = [
